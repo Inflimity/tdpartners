@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kitchen Cabinet Painting in Toronto & GTA | TD Painters</title>
+    <meta name="description"
+        content="Factory-finish kitchen cabinet painting and refinishing. Save 70% vs replacement. Professional spray finish in Toronto & GTA.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            blue: '#005A9C',
+                            green: '#28a745',
+                            dark: '#0f172a'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .main-header.scrolled {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            padding-top: 0.75rem;
+            padding-bottom: 0.75rem;
+        }
+
+        .fade-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .fade-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* FAQ Animation */
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .faq-item.active .faq-question {
+            color: #005A9C;
+            background-color: #F8FAFC;
+        }
+
+        .faq-item.active .icon-plus {
+            transform: rotate(45deg);
+        }
+
+        /* Mobile Menu */
+        @media (max-width: 1024px) {
+            .main-nav ul {
+                display: none;
+            }
+
+            .main-nav.active ul {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+                padding: 1rem 0;
+                border-top: 1px solid #e2e8f0;
+            }
+
+            .dropdown-menu {
+                display: none;
+            }
+
+            .group:hover .dropdown-menu {
+                display: block;
+                position: static;
+                box-shadow: none;
+                border: none;
+                background: #f8fafc;
+                padding-left: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body class="font-sans text-slate-600 antialiased bg-slate-50">
+
+    <header
+        class="main-header fixed w-full top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 transition-all duration-300 py-5">
+        <div class="container mx-auto px-4 max-w-7xl flex justify-between items-center relative">
+            <a href="index.html" class="logo text-2xl font-bold text-brand-blue uppercase tracking-wide">TD Painters</a>
+            <button
+                class="menu-toggle block lg:hidden text-3xl text-brand-blue focus:outline-none"><span>&#9776;</span></button>
+            <nav class="main-nav">
+                <ul class="lg:flex lg:items-center lg:space-x-8 font-semibold text-slate-700">
+                    <li><a href="index.html" class="block py-2 px-4 hover:text-brand-green transition-colors">Home</a>
+                    </li>
+                    <li class="relative group dropdown">
+                        <a href="#services"
+                            class="block py-2 px-4 hover:text-brand-green transition-colors cursor-pointer flex items-center gap-1">Services
+                            <span>▾</span></a>
+                        <ul
+                            class="dropdown-menu hidden group-hover:block lg:absolute lg:top-full lg:left-0 lg:w-64 lg:bg-white lg:shadow-xl lg:rounded-xl lg:py-2 lg:border lg:border-slate-100 z-50">
+                            <li><a href="residential-painting.html"
+                                    class="block px-6 py-3 hover:bg-slate-50 hover:text-brand-blue">Residential
+                                    Painting</a></li>
+                            <li><a href="commercial-painting.html"
+                                    class="block px-6 py-3 hover:bg-slate-50 hover:text-brand-blue">Commercial
+                                    Painting</a></li>
+                            <li><a href="popcorn-ceiling-removal.html"
+                                    class="block px-6 py-3 hover:bg-slate-50 hover:text-brand-blue">Popcorn Ceiling
+                                    Removal</a></li>
+                            <li><a href="kitchen-cabinet-painting.html"
+                                    class="block px-6 py-3 hover:bg-slate-50 hover:text-brand-blue">Kitchen Cabinet
+                                    Painting</a></li>
+                            <li><a href="door-fence-painting.html"
+                                    class="block px-6 py-3 hover:bg-slate-50 hover:text-brand-blue">Door & Fence
+                                    Painting</a></li>
+                            <li><a href="bathroom-services.html"
+                                    class="block px-6 py-3 hover:bg-slate-50 hover:text-brand-blue">Bathroom
+                                    Services</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="pricing.html"
+                            class="block py-2 px-4 hover:text-brand-green transition-colors">Pricing</a></li>
+                    <li><a href="gallery.html"
+                            class="block py-2 px-4 hover:text-brand-green transition-colors">Gallery</a></li>
+
+                </ul>
+            </nav>
+            <a href="contact.html"
+                class="cta-button hidden lg:inline-block bg-brand-green text-white px-8 py-3 rounded-full font-semibold hover:bg-green-700 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">Free
+                Quote</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="relative h-[450px] flex items-center justify-center overflow-hidden">
+            <div class="absolute inset-0 z-0">
+                <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?q=80&w=2068&auto=format&fit=crop"
+                    class="w-full h-full object-cover" alt="White Kitchen Cabinets">
+                <div class="absolute inset-0 bg-brand-blue/80 mix-blend-multiply"></div>
+            </div>
+            <div class="relative z-10 text-center text-white px-4 max-w-4xl fade-on-scroll">
+                <span
+                    class="bg-white/20 text-white px-4 py-1 rounded-full text-sm font-bold uppercase tracking-widest backdrop-blur-sm mb-4 inline-block">Kitchen
+                    Transformation</span>
+                <h1 class="text-4xl md:text-5xl font-bold mb-4 tracking-tight">Kitchen Cabinet Painting</h1>
+                <p class="text-xl text-blue-100 font-light">Get a brand new look without the brand new price tag.</p>
+            </div>
+        </section>
+
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-4 max-w-7xl">
+                <div class="grid lg:grid-cols-3 gap-16">
+
+                    <div class="lg:col-span-2 space-y-12 fade-on-scroll">
+
+                        <div>
+                            <h2 class="text-3xl font-bold text-slate-900 mb-6">The Ultimate Makeover on a Budget</h2>
+                            <p class="text-lg text-slate-600 leading-relaxed mb-6">
+                                A full kitchen renovation is expensive and disruptive. If you're happy with your layout
+                                but tired of the dated look, professional cabinet painting is the solution.
+                            </p>
+                            <p class="text-lg text-slate-600 leading-relaxed">
+                                TD Painters provides a durable, <strong>factory-like finish</strong> for a fraction of
+                                the cost of replacement. We use specialized lacquers and spray equipment—not just
+                                brushes and rollers.
+                            </p>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="bg-slate-50 p-6 rounded-xl border border-slate-100">
+                                <span class="text-3xl mb-3 block">💰</span>
+                                <h3 class="font-bold text-slate-900 text-lg">Cost Effective</h3>
+                                <p class="text-sm text-slate-600 mt-2">Save 70-80% compared to installing brand new
+                                    cabinetry.</p>
+                            </div>
+                            <div class="bg-slate-50 p-6 rounded-xl border border-slate-100">
+                                <span class="text-3xl mb-3 block">⚡</span>
+                                <h3 class="font-bold text-slate-900 text-lg">Fast Turnaround</h3>
+                                <p class="text-sm text-slate-600 mt-2">Completed in ~1 week, minimizing downtime in your
+                                    home.</p>
+                            </div>
+                            <div class="bg-slate-50 p-6 rounded-xl border border-slate-100">
+                                <span class="text-3xl mb-3 block">🎨</span>
+                                <h3 class="font-bold text-slate-900 text-lg">Unlimited Colors</h3>
+                                <p class="text-sm text-slate-600 mt-2">Match Benjamin Moore, Sherwin-Williams, or any
+                                    custom shade.</p>
+                            </div>
+                            <div class="bg-slate-50 p-6 rounded-xl border border-slate-100">
+                                <span class="text-3xl mb-3 block">🛡️</span>
+                                <h3 class="font-bold text-slate-900 text-lg">Durable Finish</h3>
+                                <p class="text-sm text-slate-600 mt-2">Resistant to chipping, moisture, and daily wear
+                                    and tear.</p>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-2xl font-bold text-slate-900 mb-8 border-l-4 border-brand-green pl-4">Our
+                                Factory-Finish Process</h3>
+                            <div class="space-y-6">
+                                <div class="flex gap-4">
+                                    <div
+                                        class="w-10 h-10 rounded-full bg-brand-blue text-white flex items-center justify-center font-bold flex-shrink-0">
+                                        1</div>
+                                    <div>
+                                        <h4 class="font-bold text-slate-900">Removal & Labeling</h4>
+                                        <p class="text-sm text-slate-600">We carefully remove all doors, drawers, and
+                                            hardware, labeling them for perfect re-installation.</p>
+                                    </div>
+                                </div>
+                                <div class="flex gap-4">
+                                    <div
+                                        class="w-10 h-10 rounded-full bg-brand-blue text-white flex items-center justify-center font-bold flex-shrink-0">
+                                        2</div>
+                                    <div>
+                                        <h4 class="font-bold text-slate-900">Off-Site Spraying</h4>
+                                        <p class="text-sm text-slate-600">Doors are taken to our facility. We clean,
+                                            degrease, sand, prime, and spray them in a controlled environment for a
+                                            flawless finish.</p>
+                                    </div>
+                                </div>
+                                <div class="flex gap-4">
+                                    <div
+                                        class="w-10 h-10 rounded-full bg-brand-blue text-white flex items-center justify-center font-bold flex-shrink-0">
+                                        3</div>
+                                    <div>
+                                        <h4 class="font-bold text-slate-900">On-Site Box Painting</h4>
+                                        <p class="text-sm text-slate-600">While doors dry, we prep and paint the cabinet
+                                            boxes (frames) in your home, masking off everything to protect your floors
+                                            and walls.</p>
+                                    </div>
+                                </div>
+                                <div class="flex gap-4">
+                                    <div
+                                        class="w-10 h-10 rounded-full bg-brand-blue text-white flex items-center justify-center font-bold flex-shrink-0">
+                                        4</div>
+                                    <div>
+                                        <h4 class="font-bold text-slate-900">Re-Installation</h4>
+                                        <p class="text-sm text-slate-600">We return, re-hang doors, install hardware
+                                            (old or new), and ensure everything closes perfectly.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <aside class="lg:col-span-1 space-y-6 fade-on-scroll sticky top-24 h-fit">
+                        <div class="bg-slate-900 text-white p-6 rounded-t-2xl text-center">
+                            <h3 class="text-xl font-bold">Cabinet Packages</h3>
+                            <p class="text-slate-400 text-sm">Clear, Transparent Pricing</p>
+                        </div>
+
+                        <div class="bg-white border border-slate-200 rounded-b-2xl shadow-lg p-6 space-y-6">
+
+                            <div class="pb-6 border-b border-slate-100">
+                                <h4 class="font-bold text-slate-800">Small Kitchen</h4>
+                                <div class="flex justify-between items-center mt-2">
+                                    <span class="text-2xl font-bold text-brand-green">From $2,000</span>
+                                </div>
+                                <p class="text-xs text-slate-500 mt-1">10-15 Doors/Drawers. Spray Finish.</p>
+                            </div>
+
+                            <div class="bg-blue-50 p-4 rounded-xl border border-blue-100 relative">
+                                <span
+                                    class="absolute top-0 right-0 bg-brand-blue text-white text-[10px] px-2 py-0.5 rounded-bl-lg font-bold">POPULAR</span>
+                                <h4 class="font-bold text-brand-blue">Medium Kitchen</h4>
+                                <div class="flex justify-between items-center mt-2">
+                                    <span class="text-2xl font-bold text-slate-900">From $3,500</span>
+                                </div>
+                                <p class="text-xs text-slate-600 mt-1">15-25 Doors. Full Transformation.</p>
+                            </div>
+
+                            <div class="pb-6 border-b border-slate-100">
+                                <h4 class="font-bold text-slate-800">Large Kitchen</h4>
+                                <div class="flex justify-between items-center mt-2">
+                                    <span class="text-2xl font-bold text-slate-900">Custom Quote</span>
+                                </div>
+                                <p class="text-xs text-slate-500 mt-1">25+ Doors or Complex Layouts.</p>
+                            </div>
+
+                            <div class="text-center text-xs text-slate-400">
+                                <p class="font-bold text-brand-blue mb-2">Price Match Guarantee + 5% Off</p>
+                            </div>
+
+                            <a href="contact.html"
+                                class="block w-full text-center bg-brand-green text-white font-bold py-3 rounded-xl hover:bg-green-700 transition shadow-md">
+                                Quote My Kitchen
+                            </a>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 bg-slate-50">
+            <div class="container mx-auto px-4 max-w-7xl">
+                <div class="text-center mb-12 fade-on-scroll">
+                    <h2 class="text-3xl font-bold text-slate-900">Before & After</h2>
+                    <p class="text-slate-500 mt-2">Real transformations from the GTA.</p>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 fade-on-scroll">
+                    <div class="relative group overflow-hidden rounded-xl h-48 md:h-64">
+                        <img src="https://images.unsplash.com/photo-1556912173-3db996ea0622?q=80&w=2070&auto=format&fit=crop"
+                            class="w-full h-full object-cover transition duration-500 group-hover:scale-110"
+                            alt="Oak Kitchen">
+                        <div
+                            class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                            <span class="text-white font-bold">Dated Oak</span>
+                        </div>
+                    </div>
+                    <div class="relative group overflow-hidden rounded-xl h-48 md:h-64">
+                        <img src="https://images.unsplash.com/photo-1556909212-d5b604d0c90d?q=80&w=2070&auto=format&fit=crop"
+                            class="w-full h-full object-cover transition duration-500 group-hover:scale-110"
+                            alt="White Kitchen">
+                        <div
+                            class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                            <span class="text-white font-bold">Modern White</span>
+                        </div>
+                    </div>
+                    <div class="relative group overflow-hidden rounded-xl h-48 md:h-64">
+                        <img src="https://images.unsplash.com/photo-1484154218962-a1c002085d2f?q=80&w=2070&auto=format&fit=crop"
+                            class="w-full h-full object-cover transition duration-500 group-hover:scale-110"
+                            alt="Grey Cabinets">
+                        <div
+                            class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                            <span class="text-white font-bold">Sleek Grey</span>
+                        </div>
+                    </div>
+                    <div class="relative group overflow-hidden rounded-xl h-48 md:h-64">
+                        <img src="https://images.unsplash.com/photo-1595515106969-1ce29566ff1c?q=80&w=2070&auto=format&fit=crop"
+                            class="w-full h-full object-cover transition duration-500 group-hover:scale-110"
+                            alt="Two Tone Kitchen">
+                        <div
+                            class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                            <span class="text-white font-bold">Two-Tone Design</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-4 max-w-3xl">
+                <h2 class="text-3xl font-bold text-slate-900 text-center mb-10">Common Questions</h2>
+                <div class="faq-accordion space-y-4">
+                    <div
+                        class="faq-item bg-white rounded-lg border border-slate-200 overflow-hidden hover:shadow-md transition">
+                        <button
+                            class="faq-question w-full text-left p-6 font-semibold text-slate-700 flex justify-between items-center transition-colors">
+                            How durable is the paint?
+                            <span class="icon-plus text-brand-green text-2xl transition-transform duration-300">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="p-6 pt-0 text-slate-600 leading-relaxed border-t border-slate-100">
+                                Extremely durable. We use high-performance coatings specifically designed for cabinetry
+                                that cure to a hard, non-porous finish, similar to a factory baked-on finish.
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="faq-item bg-white rounded-lg border border-slate-200 overflow-hidden hover:shadow-md transition">
+                        <button
+                            class="faq-question w-full text-left p-6 font-semibold text-slate-700 flex justify-between items-center transition-colors">
+                            Will there be a strong smell?
+                            <span class="icon-plus text-brand-green text-2xl transition-transform duration-300">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="p-6 pt-0 text-slate-600 leading-relaxed border-t border-slate-100">
+                                We minimize odors by spraying doors off-site. For the boxes painted in your home, we use
+                                low-VOC products and ventilation. Any mild odor typically disappears within 24-48 hours.
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="faq-item bg-white rounded-lg border border-slate-200 overflow-hidden hover:shadow-md transition">
+                        <button
+                            class="faq-question w-full text-left p-6 font-semibold text-slate-700 flex justify-between items-center transition-colors">
+                            Can you paint laminate cabinets?
+                            <span class="icon-plus text-brand-green text-2xl transition-transform duration-300">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="p-6 pt-0 text-slate-600 leading-relaxed border-t border-slate-100">
+                                Painting laminate is difficult as paint doesn't adhere well long-term. We recommend this
+                                service primarily for wood, MDF, or previously painted cabinets. We assess every project
+                                first.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 bg-brand-blue text-center text-white fade-on-scroll">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl md:text-5xl font-bold mb-6">Fall in Love with Your Kitchen Again</h2>
+                <p class="text-xl text-blue-100 mb-10">Get a free, detailed estimate for your kitchen cabinet
+                    transformation.</p>
+                <a href="contact.html"
+                    class="inline-block bg-white text-brand-blue px-10 py-4 rounded-full font-bold text-lg hover:bg-brand-green hover:text-white transition shadow-xl hover:shadow-2xl hover:-translate-y-1">
+                    Request Free Quote
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer bg-slate-900 text-slate-400 border-t-4 border-brand-blue pt-20 text-sm">
+        <div class="container mx-auto px-4 max-w-7xl">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <div class="footer-column">
+                    <a href="index.html" class="block text-2xl font-bold text-white mb-6 uppercase tracking-wider">TD
+                        Painters</a>
+                    <p class="leading-relaxed mb-6">Professional residential and commercial painting services. We bring
+                        color to life with precision, quality, and a 100% satisfaction guarantee.</p>
+                    <div class="social-icons flex gap-4">
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-white hover:bg-brand-blue hover:-translate-y-1 transition border border-slate-700">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-white hover:bg-brand-blue hover:-translate-y-1 transition border border-slate-700">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-white hover:bg-brand-blue hover:-translate-y-1 transition border border-slate-700">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                                </path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4
+                        class="text-white text-lg font-bold mb-6 relative pb-3 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-10 after:h-1 after:bg-brand-green">
+                        Explore</h4>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="hover:text-brand-green hover:pl-1 transition-all">Home</a></li>
+                        <li><a href="about.html" class="hover:text-brand-green hover:pl-1 transition-all">About Us</a>
+                        </li>
+                        <li><a href="services.html"
+                                class="hover:text-brand-green hover:pl-1 transition-all">Services</a></li>
+                        <li><a href="gallery.html" class="hover:text-brand-green hover:pl-1 transition-all">Project
+                                Gallery</a></li>
+                        <li><a href="pricing.html" class="hover:text-brand-green hover:pl-1 transition-all">Pricing &
+                                Offers</a></li>
+                        <li><a href="blog.html" class="hover:text-brand-green hover:pl-1 transition-all">Tips & Blog</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4
+                        class="text-white text-lg font-bold mb-6 relative pb-3 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-10 after:h-1 after:bg-brand-green">
+                        Service Areas</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="hover:text-brand-green hover:pl-1 transition-all">Toronto & Downtown</a>
+                        </li>
+                        <li><a href="#" class="hover:text-brand-green hover:pl-1 transition-all">Mississauga</a></li>
+                        <li><a href="#" class="hover:text-brand-green hover:pl-1 transition-all">Brampton</a></li>
+                        <li><a href="#" class="hover:text-brand-green hover:pl-1 transition-all">Oakville & Milton</a>
+                        </li>
+                        <li><a href="#" class="hover:text-brand-green hover:pl-1 transition-all">Vaughan & Richmond
+                                Hill</a></li>
+                        <li><a href="#" class="hover:text-brand-green hover:pl-1 transition-all">North York &
+                                Scarborough</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column contact-column">
+                    <h4
+                        class="text-white text-lg font-bold mb-6 relative pb-3 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-10 after:h-1 after:bg-brand-green">
+                        Get in Touch</h4>
+                    <div class="flex items-center gap-3 mb-4 text-white font-semibold">
+                        <span>📞</span> <a href="tel:+14167387614" class="hover:text-brand-green">+1 (416) 738-7614</a>
+                    </div>
+                    <div class="flex items-center gap-3 mb-6 text-white font-semibold">
+                        <span>✉️</span> <a href="mailto:info@tdpainters.com"
+                            class="hover:text-brand-green">info@tdpainters.com</a>
+                    </div>
+                    <div class="bg-slate-800 p-4 rounded-lg border-l-4 border-brand-blue">
+                        <h5 class="text-white font-bold mb-2">Business Hours</h5>
+                        <p class="text-slate-400 text-xs">Mon - Fri: 8:00 AM - 7:00 PM</p>
+                        <p class="text-slate-400 text-xs mt-1">Sat: 9:00 AM - 5:00 PM</p>
+                        <p class="text-slate-400 text-xs mt-1">Sun: Closed</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom bg-black/20 border-t border-slate-800 py-6">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
+                    <div class="copyright">&copy; 2026 TD Painters. All Rights Reserved.</div>
+                    <div class="legal-links flex gap-6">
+                        <a href="#" class="hover:text-brand-green transition">Privacy Policy</a>
+                        <a href="#" class="hover:text-brand-green transition">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/assets/js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TD Painters - Professional Painting Services in Toronto & GTA</title>
+    <meta name="description"
+        content="Expert residential and commercial painting in Toronto & GTA. Price Match Guarantee + 5% Discount.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            blue: '#005A9C',
+                            green: '#28a745',
+                            dark: '#0f172a'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* 1. Header Scroll State */
+        .main-header.scrolled {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            padding-top: 0.75rem;
+            padding-bottom: 0.75rem;
+        }
+
+        /* 2. Scroll Animation */
+        .fade-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .fade-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* 3. FAQ Accordion Animation */
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .faq-item.active .faq-question {
+            color: #005A9C;
+            background-color: #F8FAFC;
+        }
+
+        .faq-item.active .icon-plus {
+            transform: rotate(45deg);
+        }
+
+        /* 4. MOBILE MENU LOGIC (The Fix) */
+        @media (max-width: 1024px) {
+
+            /* By default, hide the UL on mobile */
+            .main-nav ul {
+                display: none;
+            }
+
+            /* When JS adds .active, Show the UL */
+            .main-nav.active ul {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                /* Push it right below the header */
+                left: 0;
+                width: 100%;
+                background-color: white;
+                box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+                border-top: 1px solid #e2e8f0;
+                padding: 1rem 0;
+                max-height: 80vh;
+                /* Allow scrolling if menu is tall */
+                overflow-y: auto;
+            }
+
+            /* Mobile Link Styling */
+            .main-nav.active a {
+                padding: 15px 20px;
+                border-bottom: 1px solid #f1f5f9;
+                display: block;
+                width: 100%;
+            }
+
+            /* Mobile Dropdown Styling */
+            .dropdown-menu {
+                position: static !important;
+                /* Stack vertically, don't float */
+                box-shadow: none !important;
+                border: none !important;
+                background-color: #f8fafc !important;
+                width: 100% !important;
+                padding-left: 20px !important;
+                display: none;
+                /* Hidden by default */
+            }
+
+            /* Show dropdown on hover/tap in mobile */
+            .group:hover .dropdown-menu {
+                display: block;
+            }
+        }
+    </style>
+
+
+</head>
+
+<body class="font-sans text-slate-600 antialiased bg-white selection:bg-brand-blue selection:text-white">
+
+
+    <header
+        class="main-header fixed w-full top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 transition-all duration-300 py-4">
+        <div class="container mx-auto px-4 max-w-7xl flex justify-between items-center relative">
+
+            <a href="index.html" class="logo text-2xl font-bold text-brand-blue uppercase tracking-wide">
+                TD Painters
+            </a>
+
+            <button class="menu-toggle block lg:hidden text-4xl text-brand-blue focus:outline-none cursor-pointer p-2"
+                aria-label="Toggle navigation">
+                <span>&#9776;</span>
+            </button>
+
+            <nav class="main-nav">
+                <ul class="lg:flex lg:items-center lg:space-x-8 font-semibold text-slate-700">
+
+                    <li><a href="index.html" class="block py-2 px-4 hover:text-brand-green transition-colors">Home</a>
+                    </li>
+
+                    <li class="relative group dropdown">
+                        <a href="#services"
+                            class="block py-2 px-4 hover:text-brand-green transition-colors cursor-pointer flex items-center justify-between lg:justify-start gap-1">
+                            Services <span class="text-xs">▼</span>
+                        </a>
+                        <ul
+                            class="dropdown-menu hidden group-hover:block lg:absolute lg:top-full lg:left-0 lg:w-72 lg:bg-white lg:shadow-xl lg:rounded-xl lg:py-2 lg:border lg:border-slate-100 z-50">
+                            <li><a href="residential-painting.html"
+                                    class="block px-6 py-3 hover:bg-slate-50 hover:text-brand-blue transition">Residential
+                                    Painting</a></li>
+                            <li><a href="commercial-painting.html"
+                                    class="block px-6 py-3 hover:bg-slate-50 hover:text-brand-blue transition">Commercial
+                                    Painting</a></li>
+                            <li><a href="popcorn-ceiling-removal.html"
+                                    class="block px-6 py-3 hover:bg-slate-50 hover:text-brand-blue transition">Popcorn
+                                    Ceiling Removal</a></li>
+                            <li><a href="kitchen-cabinet-painting.html"
+                                    class="block px-6 py-3 hover:bg-slate-50 hover:text-brand-blue transition">Kitchen
+                                    Cabinet Painting</a></li>
+                            <li><a href="door-fence-painting.html"
+                                    class="block px-6 py-3 hover:bg-slate-50 hover:text-brand-blue transition">Door &
+                                    Fence Painting</a></li>
+                            <li><a href="bathroom-services.html"
+                                    class="block px-6 py-3 hover:bg-slate-50 hover:text-brand-blue transition">Bathroom
+                                    Services</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="pricing.html"
+                            class="block py-2 px-4 hover:text-brand-green transition-colors">Pricing</a></li>
+                    <li><a href="gallery.html"
+                            class="block py-2 px-4 hover:text-brand-green transition-colors">Gallery</a></li>
+
+                    <li class="lg:hidden mt-4 px-4">
+                        <a href="contact.html"
+                            class="block text-center bg-brand-green text-white py-3 rounded-full hover:bg-green-700">Get
+                            Free Quote</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <a href="contact.html"
+                class="cta-button hidden lg:inline-block bg-brand-green text-white px-8 py-3 rounded-full font-semibold hover:bg-green-700 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
+                Free Quote
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-section relative h-screen min-h-[650px] flex items-center justify-center overflow-hidden">
+
+            <div class="absolute inset-0 z-0">
+                <img src="https://images.unsplash.com/photo-1562259949-e8e7689d7828?q=80&w=2131&auto=format&fit=crop"
+                    class="w-full h-full object-cover transform scale-105" alt="Bright Happy Living Room">
+
+                <div class="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-brand-blue/40 to-slate-900/30">
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-transparent to-transparent"></div>
+            </div>
+
+            <div class="container mx-auto px-4 relative z-10 text-center text-white fade-on-scroll max-w-5xl">
+
+                <div
+                    class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-4 py-1.5 mb-8 shadow-lg animate-bounce-slow">
+                    <span class="w-2 h-2 rounded-full bg-brand-green animate-pulse"></span>
+                    <span class="text-sm font-medium tracking-wide text-blue-50">Spring Booking Special: Save 5%
+                        Today</span>
+                </div>
+
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 tracking-tight leading-tight drop-shadow-lg">
+                    Fall in Love with Your <br class="hidden md:block"> Home All Over Again.
+                </h1>
+
+                <p class="text-lg md:text-xl mb-10 text-blue-50 font-light max-w-2xl mx-auto leading-relaxed">
+                    Professional painting made simple. We handle the prep, the painting, and the cleanup, so you can
+                    enjoy the results without the stress.
+                </p>
+
+                <div class="flex flex-col sm:flex-row justify-center gap-5 mb-10">
+                    <a href="contact.html"
+                        class="group relative bg-brand-green text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-green-600 transition-all shadow-[0_0_20px_rgba(40,167,69,0.3)] hover:shadow-[0_0_30px_rgba(40,167,69,0.5)] hover:-translate-y-1 overflow-hidden">
+                        <span class="relative z-10">Get My Free Quote</span>
+                        <div
+                            class="absolute top-0 -inset-full h-full w-1/2 z-5 block transform -skew-x-12 bg-gradient-to-r from-transparent to-white opacity-20 group-hover:animate-shine">
+                        </div>
+                    </a>
+
+                    <a href="gallery.html"
+                        class="flex items-center justify-center gap-2 bg-white/10 backdrop-blur-sm border border-white/30 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-brand-blue transition hover:-translate-y-1">
+                        See Our Work
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                            stroke="currentColor" class="w-5 h-5">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+                        </svg>
+                    </a>
+                </div>
+
+                <div
+                    class="flex flex-col md:flex-row items-center justify-center gap-4 text-sm font-medium text-slate-300 opacity-90">
+                    <div class="flex items-center gap-1 text-yellow-400">
+                        <span>★★★★★</span>
+                    </div>
+                    <span>Trusted by 500+ Families in the GTA</span>
+                </div>
+            </div>
+        </section>
+        <br>
+        <div class="bg-white border-b border-slate-200 relative z-20 shadow-sm">
+            <div class="container mx-auto px-4 max-w-7xl">
+                <div class="grid grid-cols-2 md:grid-cols-4 divide-x divide-slate-100">
+
+                    <div
+                        class="flex items-center justify-center gap-4 py-6 px-2 fade-on-scroll group hover:bg-slate-50 transition duration-300">
+                        <div class="text-brand-blue group-hover:scale-110 transition duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                class="w-8 h-8">
+                                <path fill-rule="evenodd"
+                                    d="M12.516 2.17a.75.75 0 00-1.032 0 11.209 11.209 0 01-7.877 3.08.75.75 0 00-.722.515A12.74 12.74 0 002.25 9.75c0 5.942 4.064 10.933 9.563 12.348a.749.749 0 00.374 0c5.499-1.415 9.563-6.406 9.563-12.348 0-1.352-.272-2.636-.759-3.985a.75.75 0 00-.722-.516l-.143.001c-2.996 0-5.717-1.17-7.734-3.08zm3.094 8.016a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <div class="leading-tight">
+                            <span class="block text-sm font-bold text-slate-900 uppercase tracking-wide">100%
+                                Satisfaction</span>
+                            <span class="block text-xs text-slate-500 font-medium">Guaranteed Results</span>
+                        </div>
+                    </div>
+
+                    <div
+                        class="flex items-center justify-center gap-4 py-6 px-2 fade-on-scroll group hover:bg-slate-50 transition duration-300 border-t md:border-t-0 border-slate-100">
+                        <div class="text-brand-blue group-hover:scale-110 transition duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                class="w-8 h-8">
+                                <path fill-rule="evenodd"
+                                    d="M5.25 2.25a3 3 0 00-3 3v4.318a3 3 0 00.879 2.121l9.58 9.581c.92.92 2.39 1.186 3.548.428a18.849 18.849 0 005.441-5.44c.758-1.16.492-2.629-.428-3.548l-9.58-9.581a3 3 0 00-2.122-.879H5.25zM6.375 7.5a1.125 1.125 0 100-2.25 1.125 1.125 0 000 2.25z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <div class="leading-tight">
+                            <span class="block text-sm font-bold text-slate-900 uppercase tracking-wide">Price
+                                Match</span>
+                            <span class="block text-xs text-brand-green font-bold">+ 5% Extra Discount</span>
+                        </div>
+                    </div>
+
+                    <div
+                        class="flex items-center justify-center gap-4 py-6 px-2 fade-on-scroll group hover:bg-slate-50 transition duration-300 border-t md:border-t-0 border-slate-100">
+                        <div class="text-brand-blue group-hover:scale-110 transition duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                class="w-8 h-8">
+                                <path fill-rule="evenodd"
+                                    d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <div class="leading-tight">
+                            <span class="block text-sm font-bold text-slate-900 uppercase tracking-wide">Fully
+                                Licensed</span>
+                            <span class="block text-xs text-slate-500 font-medium">Insured & WSIB</span>
+                        </div>
+                    </div>
+
+                    <div
+                        class="flex items-center justify-center gap-4 py-6 px-2 fade-on-scroll group hover:bg-slate-50 transition duration-300 border-t md:border-t-0 border-slate-100">
+                        <div class="text-brand-blue group-hover:scale-110 transition duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                class="w-8 h-8">
+                                <path fill-rule="evenodd"
+                                    d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <div class="leading-tight">
+                            <span class="block text-sm font-bold text-slate-900 uppercase tracking-wide">Top
+                                Rated</span>
+                            <span class="block text-xs text-slate-500 font-medium">In Toronto & GTA</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <section class="py-24 bg-white overflow-hidden">
+            <div class="container mx-auto px-4 max-w-7xl">
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+                    <div class="relative about-us-image fade-on-scroll group">
+                        <div
+                            class="absolute -inset-4 bg-brand-blue/20 rounded-2xl blur-lg opacity-70 group-hover:opacity-100 transition duration-500">
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1595846519845-68e298c2edd8?q=80&w=2070&auto=format&fit=crop"
+                            class="relative rounded-2xl shadow-2xl w-full object-cover h-[500px]" alt="About Us">
+                        <div
+                            class="absolute -bottom-6 -right-6 bg-white p-6 rounded-xl shadow-xl border-t-4 border-brand-green hidden md:block">
+                            <p class="text-4xl font-bold text-brand-blue">10+</p>
+                            <p class="text-xs font-bold text-slate-500 uppercase tracking-wider">Years Exp.</p>
+                        </div>
+                    </div>
+
+                    <div class="about-us-content fade-on-scroll">
+                        <span class="text-brand-green font-bold tracking-widest uppercase text-sm">Our Story</span>
+                        <h2 class="text-4xl font-bold text-slate-900 mt-2 mb-6">Quality Craftsmanship You Can Trust</h2>
+                        <div class="space-y-6 text-lg text-slate-600 leading-relaxed mb-8">
+                            <p>
+                                TD Painters was founded on a simple principle: to provide homeowners in the GTA with a
+                                painting service they can <span class="text-brand-blue font-semibold">actually
+                                    trust</span>.
+                            </p>
+                            <p>
+                                We prioritize customer experience just as much as the final result. From Downtown
+                                Toronto to Mississauga, our skilled team delivers flawless results without the hassle.
+                            </p>
+                        </div>
+                        <ul class="grid sm:grid-cols-2 gap-6">
+                            <li
+                                class="group flex items-start gap-5 p-6 rounded-xl bg-white border border-slate-100 shadow-sm hover:shadow-md hover:border-brand-blue/20 transition-all duration-300">
+                                <div
+                                    class="w-12 h-12 rounded-lg bg-blue-50 text-brand-blue flex items-center justify-center flex-shrink-0 group-hover:bg-brand-blue group-hover:text-white transition-colors duration-300">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-900 text-lg mb-1">Uncompromised Quality</h4>
+                                    <p class="text-sm text-slate-500 leading-relaxed">We use only premium paints and
+                                        materials for a durable, lasting finish.</p>
+                                </div>
+                            </li>
+
+                            <li
+                                class="group flex items-start gap-5 p-6 rounded-xl bg-white border border-slate-100 shadow-sm hover:shadow-md hover:border-brand-blue/20 transition-all duration-300">
+                                <div
+                                    class="w-12 h-12 rounded-lg bg-blue-50 text-brand-blue flex items-center justify-center flex-shrink-0 group-hover:bg-brand-blue group-hover:text-white transition-colors duration-300">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-900 text-lg mb-1">Total Transparency</h4>
+                                    <p class="text-sm text-slate-500 leading-relaxed">Detailed quotes with zero hidden
+                                        fees. You know exactly what you pay.</p>
+                                </div>
+                            </li>
+
+                            <li
+                                class="group flex items-start gap-5 p-6 rounded-xl bg-white border border-slate-100 shadow-sm hover:shadow-md hover:border-brand-blue/20 transition-all duration-300">
+                                <div
+                                    class="w-12 h-12 rounded-lg bg-blue-50 text-brand-blue flex items-center justify-center flex-shrink-0 group-hover:bg-brand-blue group-hover:text-white transition-colors duration-300">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-900 text-lg mb-1">Reliable Scheduling</h4>
+                                    <p class="text-sm text-slate-500 leading-relaxed">We respect your time. We arrive
+                                        when we say we will and finish on time.</p>
+                                </div>
+                            </li>
+
+                            <li
+                                class="group flex items-start gap-5 p-6 rounded-xl bg-white border border-slate-100 shadow-sm hover:shadow-md hover:border-brand-blue/20 transition-all duration-300">
+                                <div
+                                    class="w-12 h-12 rounded-lg bg-blue-50 text-brand-blue flex items-center justify-center flex-shrink-0 group-hover:bg-brand-blue group-hover:text-white transition-colors duration-300">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-900 text-lg mb-1">Satisfaction Guarantee</h4>
+                                    <p class="text-sm text-slate-500 leading-relaxed">We don't sign off on a project
+                                        until you are completely satisfied.</p>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <div class="mt-10">
+                            <a href="about.html"
+                                class="text-brand-blue font-bold hover:text-brand-green transition flex items-center gap-2">
+                                Read Our Full Story <span>&rarr;</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="py-24 bg-slate-50">
+            <div class="container mx-auto px-4 max-w-7xl">
+                <div class="text-center mb-16 fade-on-scroll">
+                    <span class="text-brand-blue font-bold tracking-widest uppercase text-sm">What We Do</span>
+                    <h2 class="text-4xl font-bold text-slate-900 mt-2">Our Professional Services</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div
+                        class="card group bg-white rounded-2xl shadow-sm hover:shadow-2xl transition duration-300 overflow-hidden flex flex-col fade-on-scroll hover:-translate-y-2">
+                        <div class="h-60 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4f9d?q=80&w=2070&auto=format&fit=crop"
+                                class="w-full h-full object-cover transition duration-500 group-hover:scale-110"
+                                alt="Residential">
+                        </div>
+                        <div class="p-8 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold text-brand-blue mb-3">Residential Painting</h3>
+                            <p class="text-slate-500 mb-6 flex-grow">Complete interior and exterior painting. We protect
+                                your furniture and create spaces you'll love.</p>
+                            <a href="residential-painting.html"
+                                class="text-brand-green font-bold uppercase text-sm tracking-wider group-hover:text-brand-blue transition">Learn
+                                More &rarr;</a>
+                        </div>
+                    </div>
+
+                    <div
+                        class="card group bg-white rounded-2xl shadow-sm hover:shadow-2xl transition duration-300 overflow-hidden flex flex-col fade-on-scroll hover:-translate-y-2">
+                        <div class="h-60 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop"
+                                class="w-full h-full object-cover transition duration-500 group-hover:scale-110"
+                                alt="Commercial">
+                        </div>
+                        <div class="p-8 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold text-brand-blue mb-3">Commercial Painting</h3>
+                            <p class="text-slate-500 mb-6 flex-grow">Enhance your business image. Professional painting
+                                for offices, retail stores, and clinics.</p>
+                            <a href="commercial-painting.html"
+                                class="text-brand-green font-bold uppercase text-sm tracking-wider group-hover:text-brand-blue transition">Learn
+                                More &rarr;</a>
+                        </div>
+                    </div>
+
+                    <div
+                        class="card group bg-white rounded-2xl shadow-sm hover:shadow-2xl transition duration-300 overflow-hidden flex flex-col fade-on-scroll hover:-translate-y-2">
+                        <div class="h-60 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1533750088811-7a8b16218a58?q=80&w=2070&auto=format&fit=crop"
+                                class="w-full h-full object-cover transition duration-500 group-hover:scale-110"
+                                alt="Popcorn Removal">
+                        </div>
+                        <div class="p-8 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold text-brand-blue mb-3">Popcorn Removal</h3>
+                            <p class="text-slate-500 mb-6 flex-grow">Update your home with our safe removal service,
+                                leaving a smooth, modern ceiling finish.</p>
+                            <a href="popcorn-ceiling-removal.html"
+                                class="text-brand-green font-bold uppercase text-sm tracking-wider group-hover:text-brand-blue transition">Learn
+                                More &rarr;</a>
+                        </div>
+                    </div>
+
+                    <div
+                        class="card group bg-white rounded-2xl shadow-sm hover:shadow-2xl transition duration-300 overflow-hidden flex flex-col fade-on-scroll hover:-translate-y-2">
+                        <div class="h-60 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=2070&auto=format&fit=crop"
+                                class="w-full h-full object-cover transition duration-500 group-hover:scale-110"
+                                alt="Cabinets">
+                        </div>
+                        <div class="p-8 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold text-brand-blue mb-3">Kitchen Cabinets</h3>
+                            <p class="text-slate-500 mb-6 flex-grow">A cost-effective transformation. Get a
+                                factory-finish look for a fraction of the replacement cost.</p>
+                            <a href="kitchen-cabinet-painting.html"
+                                class="text-brand-green font-bold uppercase text-sm tracking-wider group-hover:text-brand-blue transition">Learn
+                                More &rarr;</a>
+                        </div>
+                    </div>
+
+                    <div
+                        class="card group bg-white rounded-2xl shadow-sm hover:shadow-2xl transition duration-300 overflow-hidden flex flex-col fade-on-scroll hover:-translate-y-2">
+                        <div class="h-60 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=2069&auto=format&fit=crop"
+                                class="w-full h-full object-cover transition duration-500 group-hover:scale-110"
+                                alt="Door Fence">
+                        </div>
+                        <div class="p-8 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold text-brand-blue mb-3">Door & Fence</h3>
+                            <p class="text-slate-500 mb-6 flex-grow">Boost curb appeal and protect your investment with
+                                expert exterior painting and staining.</p>
+                            <a href="door-fence-painting.html"
+                                class="text-brand-green font-bold uppercase text-sm tracking-wider group-hover:text-brand-blue transition">Learn
+                                More &rarr;</a>
+                        </div>
+                    </div>
+
+                    <div
+                        class="card group bg-white rounded-2xl shadow-sm hover:shadow-2xl transition duration-300 overflow-hidden flex flex-col fade-on-scroll hover:-translate-y-2">
+                        <div class="h-60 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1584622050111-993a426fbf0a?q=80&w=2070&auto=format&fit=crop"
+                                class="w-full h-full object-cover transition duration-500 group-hover:scale-110"
+                                alt="Bathroom">
+                        </div>
+                        <div class="p-8 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold text-brand-blue mb-3">Bathroom Services</h3>
+                            <p class="text-slate-500 mb-6 flex-grow">From mold removal to grout cleaning and
+                                re-caulking, we revitalize your bathroom spaces.</p>
+                            <a href="bathroom-services.html"
+                                class="text-brand-green font-bold uppercase text-sm tracking-wider group-hover:text-brand-blue transition">Learn
+                                More &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-24 bg-white">
+            <div class="container mx-auto px-4 max-w-7xl">
+                <div class="text-center mb-16 fade-on-scroll">
+                    <h2 class="text-4xl font-bold text-slate-900">Our Simple 4-Step Process</h2>
+                </div>
+
+                <div class="steps-container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+                    <div class="step-item fade-on-scroll">
+                        <div
+                            class="w-20 h-20 bg-brand-blue text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6 border-4 border-brand-green shadow-lg">
+                            1</div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-2">Get a Quote</h3>
+                        <p class="text-slate-500 text-sm">Contact us for a fast, free, and detailed estimate.</p>
+                    </div>
+                    <div class="step-item fade-on-scroll">
+                        <div
+                            class="w-20 h-20 bg-brand-blue text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6 border-4 border-brand-green shadow-lg">
+                            2</div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-2">We Prep</h3>
+                        <p class="text-slate-500 text-sm">We carefully cover furniture and floors to protect your home.
+                        </p>
+                    </div>
+                    <div class="step-item fade-on-scroll">
+                        <div
+                            class="w-20 h-20 bg-brand-blue text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6 border-4 border-brand-green shadow-lg">
+                            3</div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-2">We Paint</h3>
+                        <p class="text-slate-500 text-sm">Using premium paints, we transform your space with precision.
+                        </p>
+                    </div>
+                    <div class="step-item fade-on-scroll">
+                        <div
+                            class="w-20 h-20 bg-brand-blue text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6 border-4 border-brand-green shadow-lg">
+                            4</div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-2">You Love It</h3>
+                        <p class="text-slate-500 text-sm">Final walk-through to ensure 100% satisfaction.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-24 bg-slate-50">
+            <div class="container mx-auto px-4 max-w-7xl">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div class="areas-content fade-on-scroll">
+                        <h2 class="text-4xl font-bold text-slate-900 mb-6">Serving the GTA & Beyond</h2>
+                        <p class="text-lg text-slate-600 mb-8">TD Painters offers top-quality services across Toronto,
+                            Mississauga, Brampton, and surrounding areas.</p>
+                        <ul class="grid grid-cols-2 gap-y-3 text-slate-700 font-medium">
+                            <li class="flex items-center gap-2"><span class="text-brand-green font-bold">✓</span>
+                                Toronto</li>
+                            <li class="flex items-center gap-2"><span class="text-brand-green font-bold">✓</span>
+                                Brampton</li>
+                            <li class="flex items-center gap-2"><span class="text-brand-green font-bold">✓</span>
+                                Mississauga</li>
+                            <li class="flex items-center gap-2"><span class="text-brand-green font-bold">✓</span>
+                                Oakville</li>
+                            <li class="flex items-center gap-2"><span class="text-brand-green font-bold">✓</span>
+                                Vaughan</li>
+                            <li class="flex items-center gap-2"><span class="text-brand-green font-bold">✓</span> North
+                                York</li>
+                            <li class="flex items-center gap-2"><span class="text-brand-green font-bold">✓</span>
+                                Scarborough</li>
+                            <li class="flex items-center gap-2"><span class="text-brand-green font-bold">✓</span>
+                                Etobicoke</li>
+                            <li class="flex items-center gap-2"><span class="text-brand-green font-bold">✓</span>
+                                Markham</li>
+                            <li class="flex items-center gap-2"><span class="text-brand-green font-bold">✓</span>
+                                Richmond Hill</li>
+                        </ul>
+                    </div>
+                    <div class="areas-map fade-on-scroll order-first lg:order-last">
+                        <img src="https://images.unsplash.com/photo-1569336415962-a4bd9f69cd83?q=80&w=2031&auto=format&fit=crop"
+                            class="rounded-2xl shadow-xl w-full" alt="Service Area Map">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-24 bg-white">
+            <div class="container mx-auto px-4 max-w-7xl">
+                <div class="text-center mb-16 fade-on-scroll">
+                    <h2 class="text-4xl font-bold text-slate-900">What Our Clients Say</h2>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div
+                        class="testimonial-item fade-on-scroll bg-slate-50 p-8 rounded-2xl border-l-4 border-brand-green shadow-sm">
+                        <div class="text-brand-green text-3xl mb-4">“</div>
+                        <p class="text-slate-600 italic mb-6">TD Painters did an incredible job. Professional, clean,
+                            and the results exceeded our expectations.</p>
+                        <footer class="font-bold text-brand-blue">– Sarah J., Mississauga</footer>
+                    </div>
+                    <div
+                        class="testimonial-item fade-on-scroll bg-slate-50 p-8 rounded-2xl border-l-4 border-brand-green shadow-sm">
+                        <div class="text-brand-green text-3xl mb-4">“</div>
+                        <p class="text-slate-600 italic mb-6">They transformed our kitchen cabinets. It looks like a
+                            brand new kitchen for a fraction of the cost.</p>
+                        <footer class="font-bold text-brand-blue">– Mark T., Toronto</footer>
+                    </div>
+                    <div
+                        class="testimonial-item fade-on-scroll bg-slate-50 p-8 rounded-2xl border-l-4 border-brand-green shadow-sm">
+                        <div class="text-brand-green text-3xl mb-4">“</div>
+                        <p class="text-slate-600 italic mb-6">Fast, efficient work on our office. Completed on time and
+                            on budget. We will use them again.</p>
+                        <footer class="font-bold text-brand-blue">– Bright Solutions Inc., Vaughan</footer>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="final-cta-section py-20 bg-brand-blue text-center text-white fade-on-scroll">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl md:text-5xl font-bold mb-6">Ready to Start Your Transformation?</h2>
+                <p class="text-xl text-blue-100 mb-10">Contact us today for a free, no-obligation quote.</p>
+                <a href="contact.html"
+                    class="inline-block bg-white text-brand-blue px-10 py-4 rounded-full font-bold text-lg hover:bg-brand-green hover:text-white transition shadow-xl hover:shadow-2xl hover:-translate-y-1">
+                    Request Free Quote
+                </a>
+            </div>
+        </section>
+
+        <section class="py-24 bg-slate-50">
+            <div class="container mx-auto px-4 max-w-4xl">
+                <h2 class="text-4xl font-bold text-slate-900 text-center mb-12">Frequently Asked Questions</h2>
+                <div class="faq-accordion space-y-4">
+                    <div
+                        class="faq-item bg-white rounded-lg border border-slate-200 overflow-hidden hover:shadow-md transition">
+                        <button
+                            class="faq-question w-full text-left p-6 font-semibold text-slate-700 flex justify-between items-center transition-colors">
+                            How long will it take to paint my house?
+                            <span class="icon-plus text-brand-green text-2xl transition-transform duration-300">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="p-6 pt-0 text-slate-600 leading-relaxed border-t border-slate-100">
+                                The timeline depends on the size and scope of the project. An average-sized room
+                                typically takes 1-2 days. A full interior can take 3-7 days. We provide a detailed
+                                timeline with your quote.
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="faq-item bg-white rounded-lg border border-slate-200 overflow-hidden hover:shadow-md transition">
+                        <button
+                            class="faq-question w-full text-left p-6 font-semibold text-slate-700 flex justify-between items-center transition-colors">
+                            Do I need to move my furniture?
+                            <span class="icon-plus text-brand-green text-2xl transition-transform duration-300">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="p-6 pt-0 text-slate-600 leading-relaxed border-t border-slate-100">
+                                We ask that you remove small, fragile, and personal items from the room. Our team will
+                                handle moving larger furniture to the center of the room and covering it securely with
+                                plastic.
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="faq-item bg-white rounded-lg border border-slate-200 overflow-hidden hover:shadow-md transition">
+                        <button
+                            class="faq-question w-full text-left p-6 font-semibold text-slate-700 flex justify-between items-center transition-colors">
+                            What kind of paint do you use?
+                            <span class="icon-plus text-brand-green text-2xl transition-transform duration-300">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="p-6 pt-0 text-slate-600 leading-relaxed border-t border-slate-100">
+                                We use high-quality, low-VOC or zero-VOC paints from trusted brands like
+                                Sherwin-Williams and Benjamin Moore to ensure a durable, beautiful, and safe finish for
+                                your family.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <section id="contact" class="py-24 bg-white relative overflow-hidden">
+        <div class="absolute top-0 right-0 -mr-24 -mt-24 w-96 h-96 bg-brand-blue/5 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 -ml-24 -mb-24 w-96 h-96 bg-brand-green/5 rounded-full blur-3xl"></div>
+
+        <div class="container mx-auto px-4 max-w-7xl relative z-10">
+            <div class="grid lg:grid-cols-2 gap-16 items-start">
+
+                <div class="fade-on-scroll">
+                    <span class="text-brand-green font-bold tracking-widest uppercase text-sm">Get In Touch</span>
+                    <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mt-2 mb-6">Let's Discuss Your Next Project
+                    </h2>
+                    <p class="text-lg text-slate-600 mb-10 leading-relaxed">
+                        Ready to transform your space? Fill out the form, or give us a call. We offer free estimates and
+                        color consultations.
+                    </p>
+
+                    <div class="space-y-8">
+                        <div class="flex items-start gap-5 group">
+                            <div
+                                class="w-14 h-14 bg-blue-50 text-brand-blue rounded-2xl flex items-center justify-center text-2xl group-hover:bg-brand-blue group-hover:text-white transition duration-300 shadow-sm">
+                                📞
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-slate-900">Phone</h4>
+                                <a href="tel:+14167387614"
+                                    class="text-slate-600 hover:text-brand-green transition text-lg">+1 (416)
+                                    738-7614</a>
+                                <p class="text-sm text-slate-400">Mon-Fri 8am-7pm</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-5 group">
+                            <div
+                                class="w-14 h-14 bg-green-50 text-brand-green rounded-2xl flex items-center justify-center text-2xl group-hover:bg-brand-green group-hover:text-white transition duration-300 shadow-sm">
+                                ✉️
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-slate-900">Email</h4>
+                                <a href="mailto:info@tdpainters.com"
+                                    class="text-slate-600 hover:text-brand-green transition text-lg">info@tdpainters.com</a>
+                                <p class="text-sm text-slate-400">Online support 24/7</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-5 group">
+                            <div
+                                class="w-14 h-14 bg-slate-100 text-slate-600 rounded-2xl flex items-center justify-center text-2xl group-hover:bg-slate-800 group-hover:text-white transition duration-300 shadow-sm">
+                                📍
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-slate-900">Service Area</h4>
+                                <p class="text-slate-600 text-lg">Toronto, Mississauga, Brampton & GTA</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-white p-8 md:p-10 rounded-3xl shadow-2xl border border-slate-100 fade-on-scroll relative">
+                    <h3 class="text-2xl font-bold text-slate-900 mb-6">Request a Free Quote</h3>
+
+                    <form action="#" class="space-y-5">
+                        <div class="grid md:grid-cols-2 gap-5">
+                            <div>
+                                <label class="block text-sm font-semibold text-slate-700 mb-2">Full Name</label>
+                                <input type="text" placeholder="John Doe"
+                                    class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-blue/50 focus:border-brand-blue transition">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-slate-700 mb-2">Phone Number</label>
+                                <input type="tel" placeholder="(416) 000-0000"
+                                    class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-blue/50 focus:border-brand-blue transition">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-700 mb-2">Email Address</label>
+                            <input type="email" placeholder="john@example.com"
+                                class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-blue/50 focus:border-brand-blue transition">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-700 mb-2">Service Needed</label>
+                            <select
+                                class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-blue/50 focus:border-brand-blue transition text-slate-600">
+                                <option>Residential Painting</option>
+                                <option>Commercial Painting</option>
+                                <option>Kitchen Cabinets</option>
+                                <option>Popcorn Removal</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-700 mb-2">Project Details</label>
+                            <textarea rows="4" placeholder="Tell us about your project..."
+                                class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-blue/50 focus:border-brand-blue transition"></textarea>
+                        </div>
+
+                        <button type="submit"
+                            class="w-full bg-brand-green text-white font-bold text-lg py-4 rounded-xl hover:bg-green-700 hover:shadow-lg hover:-translate-y-1 transition duration-300">
+                            Send Request
+                        </button>
+
+                        <p class="text-xs text-center text-slate-400 mt-4">We respect your privacy. No spam, ever.</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer bg-slate-900 text-slate-400 border-t-4 border-brand-blue pt-20 text-sm">
+        <div class="container mx-auto px-4 max-w-7xl">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <div class="footer-column">
+                    <a href="index.html" class="block text-2xl font-bold text-white mb-6 uppercase tracking-wider">TD
+                        Painters</a>
+                    <p class="leading-relaxed mb-6">Professional residential and commercial painting services. We bring
+                        color to life with precision, quality, and a 100% satisfaction guarantee.</p>
+                    <div class="social-icons flex gap-4">
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-white hover:bg-brand-blue hover:-translate-y-1 transition border border-slate-700">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-white hover:bg-brand-blue hover:-translate-y-1 transition border border-slate-700">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-white hover:bg-brand-blue hover:-translate-y-1 transition border border-slate-700">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                                </path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h4
+                        class="text-white text-lg font-bold mb-6 relative pb-3 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-10 after:h-1 after:bg-brand-green">
+                        Explore</h4>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="hover:text-brand-green hover:pl-1 transition-all">Home</a></li>
+                        <li><a href="about.html" class="hover:text-brand-green hover:pl-1 transition-all">About Us</a>
+                        </li>
+                        <li><a href="services.html"
+                                class="hover:text-brand-green hover:pl-1 transition-all">Services</a></li>
+                        <li><a href="gallery.html" class="hover:text-brand-green hover:pl-1 transition-all">Project
+                                Gallery</a></li>
+                        <li><a href="pricing.html" class="hover:text-brand-green hover:pl-1 transition-all">Pricing &
+                                Offers</a></li>
+                        <li><a href="blog.html" class="hover:text-brand-green hover:pl-1 transition-all">Tips & Blog</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4
+                        class="text-white text-lg font-bold mb-6 relative pb-3 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-10 after:h-1 after:bg-brand-green">
+                        Service Areas</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="hover:text-brand-green hover:pl-1 transition-all">Toronto & Downtown</a>
+                        </li>
+                        <li><a href="#" class="hover:text-brand-green hover:pl-1 transition-all">Mississauga</a></li>
+                        <li><a href="#" class="hover:text-brand-green hover:pl-1 transition-all">Brampton</a></li>
+                        <li><a href="#" class="hover:text-brand-green hover:pl-1 transition-all">Oakville & Milton</a>
+                        </li>
+                        <li><a href="#" class="hover:text-brand-green hover:pl-1 transition-all">Vaughan & Richmond
+                                Hill</a></li>
+                        <li><a href="#" class="hover:text-brand-green hover:pl-1 transition-all">North York &
+                                Scarborough</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column contact-column">
+                    <h4
+                        class="text-white text-lg font-bold mb-6 relative pb-3 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-10 after:h-1 after:bg-brand-green">
+                        Get in Touch</h4>
+                    <div class="flex items-center gap-3 mb-4 text-white font-semibold">
+                        <span>📞</span> <a href="tel:+14167387614" class="hover:text-brand-green">+1 (416) 738-7614</a>
+                    </div>
+                    <div class="flex items-center gap-3 mb-6 text-white font-semibold">
+                        <span>✉️</span> <a href="mailto:info@tdpainters.com"
+                            class="hover:text-brand-green">info@tdpainters.com</a>
+                    </div>
+
+                    <div class="bg-slate-800 p-4 rounded-lg border-l-4 border-brand-blue">
+                        <h5 class="text-white font-bold mb-2">Business Hours</h5>
+                        <p class="text-slate-400 text-xs">Mon - Fri: 8:00 AM - 7:00 PM</p>
+                        <p class="text-slate-400 text-xs mt-1">Sat: 9:00 AM - 5:00 PM</p>
+                        <p class="text-slate-400 text-xs mt-1">Sun: Closed</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom bg-black/20 border-t border-slate-800 py-6">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
+                    <div class="copyright">
+                        &copy; 2026 TD Painters. All Rights Reserved.
+                    </div>
+                    <div class="legal-links flex gap-6">
+                        <a href="#" class="hover:text-brand-green transition">Privacy Policy</a>
+                        <a href="#" class="hover:text-brand-green transition">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/assets/js/script.js"></script>
+</body>
+
+</html>

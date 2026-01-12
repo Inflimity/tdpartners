@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painting Project Gallery | TD Painters Toronto</title>
+    <meta name="description"
+        content="See our before and after painting transformations. Residential, commercial, and kitchen cabinets in the GTA.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            blue: '#005A9C',
+                            green: '#28a745',
+                            dark: '#0f172a'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .main-header.scrolled {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            padding-top: 0.75rem;
+            padding-bottom: 0.75rem;
+        }
+
+        .fade-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .fade-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Mobile Menu */
+        @media (max-width: 1024px) {
+            .main-nav ul {
+                display: none;
+            }
+
+            .main-nav.active ul {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+                padding: 1rem 0;
+                border-top: 1px solid #e2e8f0;
+            }
+
+            .dropdown-menu {
+                display: none;
+            }
+
+            .group:hover .dropdown-menu {
+                display: block;
+                position: static;
+                box-shadow: none;
+                border: none;
+                background: #f8fafc;
+                padding-left: 1rem;
+            }
+        }
+
+        /* Hide scrollbar for category nav */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+
+<body class="font-sans text-slate-600 antialiased bg-slate-50">
+
+    <header
+        class="main-header fixed w-full top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 transition-all duration-300 py-5">
+        <div class="container mx-auto px-4 max-w-7xl flex justify-between items-center relative">
+            <a href="index.html" class="logo text-2xl font-bold text-brand-blue uppercase tracking-wide">TD Painters</a>
+            <button
+                class="menu-toggle block lg:hidden text-3xl text-brand-blue focus:outline-none"><span>&#9776;</span></button>
+            <nav class="main-nav">
+                <ul class="lg:flex lg:items-center lg:space-x-8 font-semibold text-slate-700">
+                    <li><a href="index.html" class="block py-2 px-4 hover:text-brand-green transition-colors">Home</a>
+                    </li>
+                    <li class="relative group dropdown">
+                        <a href="#services"
+                            class="block py-2 px-4 hover:text-brand-green transition-colors cursor-pointer flex items-center gap-1">Services
+                            <span>▾</span></a>
+                        <ul
+                            class="dropdown-menu hidden group-hover:block lg:absolute lg:top-full lg:left-0 lg:w-64 lg:bg-white lg:shadow-xl lg:rounded-xl lg:py-2 lg:border lg:border-slate-100 z-50">
+                            <li><a href="residential-painting.html"
+                                    class="block px-6 py-3 hover:bg-slate-50 hover:text-brand-blue">Residential
+                                    Painting</a></li>
+                            <li><a href="commercial-painting.html"
+                                    class="block px-6 py-3 hover:bg-slate-50 hover:text-brand-blue">Commercial
+                                    Painting</a></li>
+                            <li><a href="popcorn-ceiling-removal.html"
+                                    class="block px-6 py-3 hover:bg-slate-50 hover:text-brand-blue">Popcorn Ceiling
+                                    Removal</a></li>
+                            <li><a href="kitchen-cabinet-painting.html"
+                                    class="block px-6 py-3 hover:bg-slate-50 hover:text-brand-blue">Kitchen Cabinet
+                                    Painting</a></li>
+                            <li><a href="door-fence-painting.html"
+                                    class="block px-6 py-3 hover:bg-slate-50 hover:text-brand-blue">Door & Fence
+                                    Painting</a></li>
+                            <li><a href="bathroom-services.html"
+                                    class="block px-6 py-3 hover:bg-slate-50 hover:text-brand-blue">Bathroom
+                                    Services</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="pricing.html"
+                            class="block py-2 px-4 hover:text-brand-green transition-colors">Pricing</a></li>
+                    <li><a href="gallery.html"
+                            class="block py-2 px-4 hover:text-brand-green transition-colors">Gallery</a></li>
+                </ul>
+            </nav>
+            <a href="contact.html"
+                class="cta-button hidden lg:inline-block bg-brand-green text-white px-8 py-3 rounded-full font-semibold hover:bg-green-700 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">Free
+                Quote</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="relative h-[450px] flex items-center justify-center overflow-hidden">
+            <div class="absolute inset-0 z-0">
+                <img src="/assets/images/house.jpg" class="w-full h-full object-cover" alt="Gallery Background">
+                <div class="absolute inset-0 bg-brand-blue/80 mix-blend-multiply"></div>
+            </div>
+            <div class="relative z-10 text-center text-white px-4 max-w-4xl fade-on-scroll">
+                <span
+                    class="bg-white/20 text-white px-4 py-1 rounded-full text-sm font-bold uppercase tracking-widest backdrop-blur-sm mb-4 inline-block">Our
+                    Portfolio</span>
+                <h1 class="text-4xl md:text-6xl font-bold mb-4 tracking-tight">Transformations</h1>
+                <p class="text-xl text-blue-100 font-light">Real results from real homes and businesses across the GTA.
+                </p>
+            </div>
+        </section>
+
+        <div class="sticky top-20 z-40 bg-white/95 backdrop-blur shadow-sm border-b border-slate-200 py-4">
+            <div class="container mx-auto px-4 overflow-x-auto no-scrollbar">
+                <div class="flex space-x-4 min-w-max md:justify-center">
+                    <a href="#kitchens"
+                        class="px-6 py-2 rounded-full bg-slate-100 hover:bg-brand-blue hover:text-white transition font-semibold text-sm">Kitchens</a>
+                    <a href="#interiors"
+                        class="px-6 py-2 rounded-full bg-slate-100 hover:bg-brand-blue hover:text-white transition font-semibold text-sm">Interiors</a>
+                    <a href="#commercial"
+                        class="px-6 py-2 rounded-full bg-slate-100 hover:bg-brand-blue hover:text-white transition font-semibold text-sm">Commercial</a>
+                    <a href="#exterior"
+                        class="px-6 py-2 rounded-full bg-slate-100 hover:bg-brand-blue hover:text-white transition font-semibold text-sm">Exteriors</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container mx-auto px-4 max-w-7xl py-12 space-y-24">
+
+            <section id="kitchens" class="scroll-mt-40 fade-on-scroll">
+                <div class="flex items-center gap-4 mb-8">
+                    <div class="w-12 h-1 bg-brand-green rounded-full"></div>
+                    <h2 class="text-3xl font-bold text-slate-900">Kitchen Transformations</h2>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="group relative overflow-hidden rounded-2xl shadow-lg aspect-[4/3]">
+                        <img src="https://images.unsplash.com/photo-1556912173-3db996ea0622?q=80&w=2070&auto=format&fit=crop"
+                            class="w-full h-full object-cover transition duration-700 group-hover:scale-110"
+                            alt="Kitchen Before">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90">
+                        </div>
+                        <div class="absolute bottom-0 left-0 p-6">
+                            <span
+                                class="bg-brand-blue text-white text-xs font-bold px-2 py-1 rounded mb-2 inline-block">AFTER</span>
+                            <h3 class="text-white font-bold text-lg">Modern White Refinish</h3>
+                            <p class="text-slate-300 text-sm">Mississauga • Oak to White Lacquer</p>
+                        </div>
+                    </div>
+                    <div class="group relative overflow-hidden rounded-2xl shadow-lg aspect-[4/3]">
+                        <img src="https://images.unsplash.com/photo-1556909212-d5b604d0c90d?q=80&w=2070&auto=format&fit=crop"
+                            class="w-full h-full object-cover transition duration-700 group-hover:scale-110"
+                            alt="Kitchen Two Tone">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90">
+                        </div>
+                        <div class="absolute bottom-0 left-0 p-6">
+                            <span
+                                class="bg-brand-blue text-white text-xs font-bold px-2 py-1 rounded mb-2 inline-block">AFTER</span>
+                            <h3 class="text-white font-bold text-lg">Two-Tone Design</h3>
+                            <p class="text-slate-300 text-sm">Toronto • Navy Island & White Uppers</p>
+                        </div>
+                    </div>
+                    <div class="group relative overflow-hidden rounded-2xl shadow-lg aspect-[4/3]">
+                        <img src="https://images.unsplash.com/photo-1484154218962-a1c002085d2f?q=80&w=2070&auto=format&fit=crop"
+                            class="w-full h-full object-cover transition duration-700 group-hover:scale-110"
+                            alt="Kitchen Modern">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90">
+                        </div>
+                        <div class="absolute bottom-0 left-0 p-6">
+                            <span
+                                class="bg-brand-blue text-white text-xs font-bold px-2 py-1 rounded mb-2 inline-block">AFTER</span>
+                            <h3 class="text-white font-bold text-lg">Sleek Grey Finish</h3>
+                            <p class="text-slate-300 text-sm">Brampton • Factory Finish Spray</p>
+                        </div>
+                    </div>
+                    <div class="group relative overflow-hidden rounded-2xl shadow-lg aspect-[4/3]">
+                        <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?q=80&w=2070&auto=format&fit=crop"
+                            class="w-full h-full object-cover transition duration-700 group-hover:scale-110"
+                            alt="Kitchen Bright">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90">
+                        </div>
+                        <div class="absolute bottom-0 left-0 p-6">
+                            <span
+                                class="bg-brand-blue text-white text-xs font-bold px-2 py-1 rounded mb-2 inline-block">AFTER</span>
+                            <h3 class="text-white font-bold text-lg">Bright & Airy</h3>
+                            <p class="text-slate-300 text-sm">Oakville • Benjamin Moore White Dove</p>
+                        </div>
+                    </div>
+                    <div class="group relative overflow-hidden rounded-2xl shadow-lg aspect-[4/3]">
+                        <img src="https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=2000&auto=format&fit=crop"
+                            class="w-full h-full object-cover transition duration-700 group-hover:scale-110"
+                            alt="Kitchen Island">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90">
+                        </div>
+                        <div class="absolute bottom-0 left-0 p-6">
+                            <span
+                                class="bg-brand-blue text-white text-xs font-bold px-2 py-1 rounded mb-2 inline-block">AFTER</span>
+                            <h3 class="text-white font-bold text-lg">Charcoal Island</h3>
+                            <p class="text-slate-300 text-sm">North York • Contrast Design</p>
+                        </div>
+                    </div>
+                    <div class="group relative overflow-hidden rounded-2xl shadow-lg aspect-[4/3]">
+                        <img src="https://images.unsplash.com/photo-1595515106969-1ce29566ff1c?q=80&w=2070&auto=format&fit=crop"
+                            class="w-full h-full object-cover transition duration-700 group-hover:scale-110"
+                            alt="Kitchen Traditional">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90">
+                        </div>
+                        <div class="absolute bottom-0 left-0 p-6">
+                            <span
+                                class="bg-brand-blue text-white text-xs font-bold px-2 py-1 rounded mb-2 inline-block">AFTER</span>
+                            <h3 class="text-white font-bold text-lg">Classic Cream</h3>
+                            <p class="text-slate-300 text-sm">Markham • Traditional Refinish</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="interiors" class="scroll-mt-40 fade-on-scroll">
+                <div class="flex items-center gap-4 mb-8">
+                    <div class="w-12 h-1 bg-brand-green rounded-full"></div>
+                    <h2 class="text-3xl font-bold text-slate-900">Residential Interiors</h2>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="group relative overflow-hidden rounded-2xl shadow-lg aspect-[4/3]">
+                        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2000&auto=format&fit=crop"
+                            class="w-full h-full object-cover transition duration-700 group-hover:scale-110"
+                            alt="Living Room">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90">
+                        </div>
+                        <div class="absolute bottom-0 left-0 p-6">
+                            <span
+                                class="bg-brand-green text-white text-xs font-bold px-2 py-1 rounded mb-2 inline-block">FULL
+                                HOME</span>
+                            <h3 class="text-white font-bold text-lg">Bright Living Space</h3>
+                            <p class="text-slate-300 text-sm">Etobicoke • Walls, Trim & Ceiling</p>
+                        </div>
+                    </div>
+                    <div class="group relative overflow-hidden rounded-2xl shadow-lg aspect-[4/3]">
+                        <img src="https://images.unsplash.com/photo-1616594039964-40891a909d93?q=80&w=2070&auto=format&fit=crop"
+                            class="w-full h-full object-cover transition duration-700 group-hover:scale-110"
+                            alt="Bedroom">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90">
+                        </div>
+                        <div class="absolute bottom-0 left-0 p-6">
+                            <span
+                                class="bg-brand-green text-white text-xs font-bold px-2 py-1 rounded mb-2 inline-block">ACCENT
+                                WALL</span>
+                            <h3 class="text-white font-bold text-lg">Master Bedroom Refresh</h3>
+                            <p class="text-slate-300 text-sm">Vaughan • Feature Wall Design</p>
+                        </div>
+                    </div>
+                    <div class="group relative overflow-hidden rounded-2xl shadow-lg aspect-[4/3]">
+                        <img src="https://images.unsplash.com/photo-1594445335950-89808d667c3a?q=80&w=2070&auto=format&fit=crop"
+                            class="w-full h-full object-cover transition duration-700 group-hover:scale-110"
+                            alt="Staircase">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90">
+                        </div>
+                        <div class="absolute bottom-0 left-0 p-6">
+                            <span
+                                class="bg-brand-green text-white text-xs font-bold px-2 py-1 rounded mb-2 inline-block">DETAIL
+                                WORK</span>
+                            <h3 class="text-white font-bold text-lg">High-Foyer & Stairs</h3>
+                            <p class="text-slate-300 text-sm">Richmond Hill • 20ft Ceilings</p>
+                        </div>
+                    </div>
+                    <div class="group relative overflow-hidden rounded-2xl shadow-lg aspect-[4/3]">
+                        <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=2000&auto=format&fit=crop"
+                            class="w-full h-full object-cover transition duration-700 group-hover:scale-110"
+                            alt="Hallway">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90">
+                        </div>
+                        <div class="absolute bottom-0 left-0 p-6">
+                            <span
+                                class="bg-brand-green text-white text-xs font-bold px-2 py-1 rounded mb-2 inline-block">WALLS</span>
+                            <h3 class="text-white font-bold text-lg">Modern Hallway</h3>
+                            <p class="text-slate-300 text-sm">Scarborough • Neutral Tones</p>
+                        </div>
+                    </div>
+                    <div class="group relative overflow-hidden rounded-2xl shadow-lg aspect-[4/3]">
+                        <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?q=80&w=2000&auto=format&fit=crop"
+                            class="w-full h-full object-cover transition duration-700 group-hover:scale-110"
+                            alt="Dining Room">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90">
+                        </div>
+                        <div class="absolute bottom-0 left-0 p-6">
+                            <span
+                                class="bg-brand-green text-white text-xs font-bold px-2 py-1 rounded mb-2 inline-block">DINING</span>
+                            <h3 class="text-white font-bold text-lg">Elegant Dining</h3>
+                            <p class="text-slate-300 text-sm">Toronto • Waiscotting Paint</p>
+                        </div>
+                    </div>
+                    <div class="group relative overflow-hidden rounded-2xl shadow-lg aspect-[4/3]">
+                        <img src="https://images.unsplash.com/photo-1615529182904-14819c35db37?q=80&w=2000&auto=format&fit=crop"
+                            class="w-full h-full object-cover transition duration-700 group-hover:scale-110"
+                            alt="Home Office">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90">
+                        </div>
+                        <div class="absolute bottom-0 left-0 p-6">
+                            <span
+                                class="bg-brand-green text-white text-xs font-bold px-2 py-1 rounded mb-2 inline-block">OFFICE</span>
+                            <h3 class="text-white font-bold text-lg">Cozy Home Office</h3>
+                            <p class="text-slate-300 text-sm">Mississauga • Dark Moody Paint</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="commercial" class="scroll-mt-40 fade-on-scroll">
+                <div class="flex items-center gap-4 mb-8">
+                    <div class="w-12 h-1 bg-brand-green rounded-full"></div>
+                    <h2 class="text-3xl font-bold text-slate-900">Commercial Spaces</h2>
+                </div>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="group relative overflow-hidden rounded-2xl shadow-lg aspect-[16/9]">
+                        <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=2070&auto=format&fit=crop"
+                            class="w-full h-full object-cover transition duration-700 group-hover:scale-110"
+                            alt="Office">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90">
+                        </div>
+                        <div class="absolute bottom-0 left-0 p-6">
+                            <h3 class="text-white font-bold text-xl">Tech Office HQ</h3>
+                            <p class="text-slate-300">Toronto • 5000 sq ft repaint</p>
+                        </div>
+                    </div>
+                    <div class="group relative overflow-hidden rounded-2xl shadow-lg aspect-[16/9]">
+                        <img src="https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?q=80&w=1974&auto=format&fit=crop"
+                            class="w-full h-full object-cover transition duration-700 group-hover:scale-110"
+                            alt="Retail">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90">
+                        </div>
+                        <div class="absolute bottom-0 left-0 p-6">
+                            <h3 class="text-white font-bold text-xl">Boutique Retail Store</h3>
+                            <p class="text-slate-300">Yorkville • Overnight Service</p>
+                        </div>
+                    </div>
+                    <div class="group relative overflow-hidden rounded-2xl shadow-lg aspect-[16/9]">
+                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop"
+                            class="w-full h-full object-cover transition duration-700 group-hover:scale-110"
+                            alt="Boardroom">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90">
+                        </div>
+                        <div class="absolute bottom-0 left-0 p-6">
+                            <h3 class="text-white font-bold text-xl">Corporate Boardroom</h3>
+                            <p class="text-slate-300">Financial District • Wall Protection</p>
+                        </div>
+                    </div>
+                    <div class="group relative overflow-hidden rounded-2xl shadow-lg aspect-[16/9]">
+                        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=2070&auto=format&fit=crop"
+                            class="w-full h-full object-cover transition duration-700 group-hover:scale-110"
+                            alt="Restaurant">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90">
+                        </div>
+                        <div class="absolute bottom-0 left-0 p-6">
+                            <h3 class="text-white font-bold text-xl">Restaurant Interior</h3>
+                            <p class="text-slate-300">King West • High Durability Paint</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="exterior" class="scroll-mt-40 fade-on-scroll">
+                <div class="flex items-center gap-4 mb-8">
+                    <div class="w-12 h-1 bg-brand-green rounded-full"></div>
+                    <h2 class="text-3xl font-bold text-slate-900">Exteriors & Doors</h2>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="group relative overflow-hidden rounded-2xl shadow-lg aspect-[3/4]">
+                        <img src="https://images.unsplash.com/photo-1506197061617-7f5c0b093236?q=80&w=2010&auto=format&fit=crop"
+                            class="w-full h-full object-cover transition duration-700 group-hover:scale-110" alt="Door">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <h3 class="text-white font-bold">Classic Red Door</h3>
+                        </div>
+                    </div>
+                    <div class="group relative overflow-hidden rounded-2xl shadow-lg aspect-[3/4]">
+                        <img src="https://images.unsplash.com/photo-1598337890636-6e06b3282470?q=80&w=2070&auto=format&fit=crop"
+                            class="w-full h-full object-cover transition duration-700 group-hover:scale-110"
+                            alt="Garage">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <h3 class="text-white font-bold">Black Garage Door</h3>
+                        </div>
+                    </div>
+                    <div class="group relative overflow-hidden rounded-2xl shadow-lg aspect-[3/4]">
+                        <img src="https://images.unsplash.com/photo-1621503837904-89b5c3789d6e?q=80&w=2070&auto=format&fit=crop"
+                            class="w-full h-full object-cover transition duration-700 group-hover:scale-110"
+                            alt="Fence">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <h3 class="text-white font-bold">Cedar Fence Stain</h3>
+                        </div>
+                    </div>
+                    <div class="group relative overflow-hidden rounded-2xl shadow-lg aspect-[3/4]">
+                        <img src="https://images.unsplash.com/photo-1631679706909-1844bbd07221?q=80&w=1992&auto=format&fit=crop"
+                            class="w-full h-full object-cover transition duration-700 group-hover:scale-110"
+                            alt="Shutters">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <h3 class="text-white font-bold">Window Shutters</h3>
+                        </div>
+                    </div>
+                    <div class="group relative overflow-hidden rounded-2xl shadow-lg aspect-[3/4]">
+                        <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?q=80&w=2070&auto=format&fit=crop"
+                            class="w-full h-full object-cover transition duration-700 group-hover:scale-110"
+                            alt="Blue Door">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <h3 class="text-white font-bold">Bold Blue Entry</h3>
+                        </div>
+                    </div>
+                    <div class="group relative overflow-hidden rounded-2xl shadow-lg aspect-[3/4]">
+                        <img src="https://images.unsplash.com/photo-1510344465492-f027582531a8?q=80&w=1974&auto=format&fit=crop"
+                            class="w-full h-full object-cover transition duration-700 group-hover:scale-110"
+                            alt="Porch">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <h3 class="text-white font-bold">Stained Porch</h3>
+                        </div>
+                    </div>
+                    <div class="group relative overflow-hidden rounded-2xl shadow-lg aspect-[3/4]">
+                        <img src="https://images.unsplash.com/photo-1610471922621-e8d983416562?q=80&w=2069&auto=format&fit=crop"
+                            class="w-full h-full object-cover transition duration-700 group-hover:scale-110"
+                            alt="Exterior">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <h3 class="text-white font-bold">Brick Painting</h3>
+                        </div>
+                    </div>
+                    <div class="group relative overflow-hidden rounded-2xl shadow-lg aspect-[3/4]">
+                        <img src="https://images.unsplash.com/photo-1628744876497-eb30460be9f6?q=80&w=2070&auto=format&fit=crop"
+                            class="w-full h-full object-cover transition duration-700 group-hover:scale-110" alt="Gate">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <h3 class="text-white font-bold">Metal Gate</h3>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <section class="py-20 bg-brand-blue text-center text-white fade-on-scroll">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl md:text-5xl font-bold mb-6">Inspired By Our Work?</h2>
+                <p class="text-xl text-blue-100 mb-10">Let's add your project to our gallery of success stories.</p>
+                <a href="contact.html"
+                    class="inline-block bg-white text-brand-blue px-10 py-4 rounded-full font-bold text-lg hover:bg-brand-green hover:text-white transition shadow-xl hover:shadow-2xl hover:-translate-y-1">
+                    Request Free Quote
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer bg-slate-900 text-slate-400 border-t-4 border-brand-blue pt-20 text-sm">
+        <div class="container mx-auto px-4 max-w-7xl">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <div class="footer-column">
+                    <a href="index.html" class="block text-2xl font-bold text-white mb-6 uppercase tracking-wider">TD
+                        Painters</a>
+                    <p class="leading-relaxed mb-6">Professional residential and commercial painting services. We bring
+                        color to life with precision, quality, and a 100% satisfaction guarantee.</p>
+                    <div class="social-icons flex gap-4">
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-white hover:bg-brand-blue hover:-translate-y-1 transition border border-slate-700">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-white hover:bg-brand-blue hover:-translate-y-1 transition border border-slate-700">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-white hover:bg-brand-blue hover:-translate-y-1 transition border border-slate-700">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                                </path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4
+                        class="text-white text-lg font-bold mb-6 relative pb-3 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-10 after:h-1 after:bg-brand-green">
+                        Explore</h4>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="hover:text-brand-green hover:pl-1 transition-all">Home</a></li>
+                        <li><a href="about.html" class="hover:text-brand-green hover:pl-1 transition-all">About Us</a>
+                        </li>
+                        <li><a href="services.html"
+                                class="hover:text-brand-green hover:pl-1 transition-all">Services</a></li>
+                        <li><a href="gallery.html" class="hover:text-brand-green hover:pl-1 transition-all">Project
+                                Gallery</a></li>
+                        <li><a href="pricing.html" class="hover:text-brand-green hover:pl-1 transition-all">Pricing &
+                                Offers</a></li>
+                        <li><a href="blog.html" class="hover:text-brand-green hover:pl-1 transition-all">Tips & Blog</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4
+                        class="text-white text-lg font-bold mb-6 relative pb-3 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-10 after:h-1 after:bg-brand-green">
+                        Service Areas</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="hover:text-brand-green hover:pl-1 transition-all">Toronto & Downtown</a>
+                        </li>
+                        <li><a href="#" class="hover:text-brand-green hover:pl-1 transition-all">Mississauga</a></li>
+                        <li><a href="#" class="hover:text-brand-green hover:pl-1 transition-all">Brampton</a></li>
+                        <li><a href="#" class="hover:text-brand-green hover:pl-1 transition-all">Oakville & Milton</a>
+                        </li>
+                        <li><a href="#" class="hover:text-brand-green hover:pl-1 transition-all">Vaughan & Richmond
+                                Hill</a></li>
+                        <li><a href="#" class="hover:text-brand-green hover:pl-1 transition-all">North York &
+                                Scarborough</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column contact-column">
+                    <h4
+                        class="text-white text-lg font-bold mb-6 relative pb-3 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-10 after:h-1 after:bg-brand-green">
+                        Get in Touch</h4>
+                    <div class="flex items-center gap-3 mb-4 text-white font-semibold">
+                        <span>📞</span> <a href="tel:+14167387614" class="hover:text-brand-green">+1 (416) 738-7614</a>
+                    </div>
+                    <div class="flex items-center gap-3 mb-6 text-white font-semibold">
+                        <span>✉️</span> <a href="mailto:info@tdpainters.com"
+                            class="hover:text-brand-green">info@tdpainters.com</a>
+                    </div>
+                    <div class="bg-slate-800 p-4 rounded-lg border-l-4 border-brand-blue">
+                        <h5 class="text-white font-bold mb-2">Business Hours</h5>
+                        <p class="text-slate-400 text-xs">Mon - Fri: 8:00 AM - 7:00 PM</p>
+                        <p class="text-slate-400 text-xs mt-1">Sat: 9:00 AM - 5:00 PM</p>
+                        <p class="text-slate-400 text-xs mt-1">Sun: Closed</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom bg-black/20 border-t border-slate-800 py-6">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
+                    <div class="copyright">&copy; 2026 TD Painters. All Rights Reserved.</div>
+                    <div class="legal-links flex gap-6">
+                        <a href="#" class="hover:text-brand-green transition">Privacy Policy</a>
+                        <a href="#" class="hover:text-brand-green transition">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/assets/js/script.js"></script>
+</body>
+
+</html>

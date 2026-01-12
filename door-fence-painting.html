@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Door & Fence Painting Services in Toronto & GTA | TD Painters</title>
+    <meta name="description"
+        content="Boost curb appeal with professional front door, garage door, and fence painting. Durable exterior finishes in the GTA.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            blue: '#005A9C',
+                            green: '#28a745',
+                            dark: '#0f172a'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .main-header.scrolled {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            padding-top: 0.75rem;
+            padding-bottom: 0.75rem;
+        }
+
+        .fade-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .fade-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* FAQ Animation */
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .faq-item.active .faq-question {
+            color: #005A9C;
+            background-color: #F8FAFC;
+        }
+
+        .faq-item.active .icon-plus {
+            transform: rotate(45deg);
+        }
+
+        /* Mobile Menu */
+        @media (max-width: 1024px) {
+            .main-nav ul {
+                display: none;
+            }
+
+            .main-nav.active ul {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+                padding: 1rem 0;
+                border-top: 1px solid #e2e8f0;
+            }
+
+            .dropdown-menu {
+                display: none;
+            }
+
+            .group:hover .dropdown-menu {
+                display: block;
+                position: static;
+                box-shadow: none;
+                border: none;
+                background: #f8fafc;
+                padding-left: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body class="font-sans text-slate-600 antialiased bg-slate-50">
+
+    <header
+        class="main-header fixed w-full top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 transition-all duration-300 py-5">
+        <div class="container mx-auto px-4 max-w-7xl flex justify-between items-center relative">
+            <a href="index.html" class="logo text-2xl font-bold text-brand-blue uppercase tracking-wide">TD Painters</a>
+            <button
+                class="menu-toggle block lg:hidden text-3xl text-brand-blue focus:outline-none"><span>&#9776;</span></button>
+            <nav class="main-nav">
+                <ul class="lg:flex lg:items-center lg:space-x-8 font-semibold text-slate-700">
+                    <li><a href="index.html" class="block py-2 px-4 hover:text-brand-green transition-colors">Home</a>
+                    </li>
+                    <li class="relative group dropdown">
+                        <a href="#services"
+                            class="block py-2 px-4 hover:text-brand-green transition-colors cursor-pointer flex items-center gap-1">Services
+                            <span>▾</span></a>
+                        <ul
+                            class="dropdown-menu hidden group-hover:block lg:absolute lg:top-full lg:left-0 lg:w-64 lg:bg-white lg:shadow-xl lg:rounded-xl lg:py-2 lg:border lg:border-slate-100 z-50">
+                            <li><a href="residential-painting.html"
+                                    class="block px-6 py-3 hover:bg-slate-50 hover:text-brand-blue">Residential
+                                    Painting</a></li>
+                            <li><a href="commercial-painting.html"
+                                    class="block px-6 py-3 hover:bg-slate-50 hover:text-brand-blue">Commercial
+                                    Painting</a></li>
+                            <li><a href="popcorn-ceiling-removal.html"
+                                    class="block px-6 py-3 hover:bg-slate-50 hover:text-brand-blue">Popcorn Ceiling
+                                    Removal</a></li>
+                            <li><a href="kitchen-cabinet-painting.html"
+                                    class="block px-6 py-3 hover:bg-slate-50 hover:text-brand-blue">Kitchen Cabinet
+                                    Painting</a></li>
+                            <li><a href="door-fence-painting.html"
+                                    class="block px-6 py-3 hover:bg-slate-50 hover:text-brand-blue">Door & Fence
+                                    Painting</a></li>
+                            <li><a href="bathroom-services.html"
+                                    class="block px-6 py-3 hover:bg-slate-50 hover:text-brand-blue">Bathroom
+                                    Services</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="pricing.html"
+                            class="block py-2 px-4 hover:text-brand-green transition-colors">Pricing</a></li>
+                    <li><a href="gallery.html"
+                            class="block py-2 px-4 hover:text-brand-green transition-colors">Gallery</a></li>
+
+                </ul>
+            </nav>
+            <a href="contact.html"
+                class="cta-button hidden lg:inline-block bg-brand-green text-white px-8 py-3 rounded-full font-semibold hover:bg-green-700 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">Free
+                Quote</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="relative h-[450px] flex items-center justify-center overflow-hidden">
+            <div class="absolute inset-0 z-0">
+                <img src="/assets/images/doorfence.jpg" class="w-full h-full object-cover" alt="Beautiful Front Door">
+                <div class="absolute inset-0 bg-brand-blue/80 mix-blend-multiply"></div>
+            </div>
+            <div class="relative z-10 text-center text-white px-4 max-w-4xl fade-on-scroll">
+                <span
+                    class="bg-white/20 text-white px-4 py-1 rounded-full text-sm font-bold uppercase tracking-widest backdrop-blur-sm mb-4 inline-block">Exterior
+                    Services</span>
+                <h1 class="text-4xl md:text-5xl font-bold mb-4 tracking-tight">Entrance Door & Fence Painting</h1>
+                <p class="text-xl text-blue-100 font-light">Boost curb appeal and protect your home from Canadian
+                    weather.</p>
+            </div>
+        </section>
+
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-4 max-w-7xl">
+                <div class="grid lg:grid-cols-3 gap-16">
+
+                    <div class="lg:col-span-2 space-y-8 fade-on-scroll">
+                        <div>
+                            <h2 class="text-3xl font-bold text-slate-900 mb-6">First Impressions Start at the Curb</h2>
+                            <p class="text-lg text-slate-600 leading-relaxed mb-6">
+                                The exterior details of your home—your front door, garage door, and fence—make the
+                                biggest statement. Over time, UV rays, rain, and snow cause fading and peeling, leaving
+                                your home looking tired and vulnerable to rot.
+                            </p>
+                            <p class="text-lg text-slate-600 leading-relaxed">
+                                TD Painters restores beauty and adds a critical layer of protection. Whether you want a
+                                bold red door statement or a naturally stained fence, our professional finish stands the
+                                test of time.
+                            </p>
+                        </div>
+
+                        <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100">
+                            <h3 class="text-xl font-bold text-brand-blue mb-6">What We Restore:</h3>
+                            <ul class="space-y-6">
+                                <li class="flex items-start gap-4">
+                                    <div
+                                        class="w-12 h-12 rounded-xl bg-red-100 text-red-600 flex items-center justify-center text-2xl flex-shrink-0">
+                                        🚪</div>
+                                    <div>
+                                        <h4 class="font-bold text-slate-900 text-lg">Front & Entrance Doors</h4>
+                                        <p class="text-slate-600 text-sm mt-1">High-gloss or satin finishes that welcome
+                                            guests in style.</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start gap-4">
+                                    <div
+                                        class="w-12 h-12 rounded-xl bg-blue-100 text-brand-blue flex items-center justify-center text-2xl flex-shrink-0">
+                                        🚗</div>
+                                    <div>
+                                        <h4 class="font-bold text-slate-900 text-lg">Garage Doors</h4>
+                                        <p class="text-slate-600 text-sm mt-1">Spray or roll finish for aluminum or wood
+                                            doors. Instant modernization.</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start gap-4">
+                                    <div
+                                        class="w-12 h-12 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center text-2xl flex-shrink-0">
+                                        🚧</div>
+                                    <div>
+                                        <h4 class="font-bold text-slate-900 text-lg">Fence & Deck Staining</h4>
+                                        <p class="text-slate-600 text-sm mt-1">Protect wood from rot with solid or
+                                            semi-transparent stains.</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 class="text-2xl font-bold text-slate-900 mb-6">Our Exterior Process</h3>
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div class="border border-slate-200 p-5 rounded-xl">
+                                    <span class="text-brand-green font-bold text-lg block mb-2">1. Prep & Wash</span>
+                                    <p class="text-sm text-slate-600">We power wash or hand scrub surfaces to remove
+                                        dirt, mildew, and loose paint.</p>
+                                </div>
+                                <div class="border border-slate-200 p-5 rounded-xl">
+                                    <span class="text-brand-green font-bold text-lg block mb-2">2. Sand & Repair</span>
+                                    <p class="text-sm text-slate-600">We scrape peeling areas and sand smooth. Minor
+                                        wood repairs included.</p>
+                                </div>
+                                <div class="border border-slate-200 p-5 rounded-xl">
+                                    <span class="text-brand-green font-bold text-lg block mb-2">3. Prime</span>
+                                    <p class="text-sm text-slate-600">High-bond bonding primer is applied to bare wood
+                                        or metal for adhesion.</p>
+                                </div>
+                                <div class="border border-slate-200 p-5 rounded-xl">
+                                    <span class="text-brand-green font-bold text-lg block mb-2">4. Finish Coat</span>
+                                    <p class="text-sm text-slate-600">Two coats of premium exterior paint
+                                        (Sherwin-Williams/Benjamin Moore).</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-blue-50 border-l-4 border-brand-blue p-6 rounded-r-xl">
+                            <h4 class="font-bold text-brand-blue mb-2">Tip: Paint vs. Stain for Fences?</h4>
+                            <p class="text-sm text-slate-700 leading-relaxed">
+                                <strong>Stain</strong> penetrates the wood, showing the grain and never peeling (it just
+                                fades). <br>
+                                <strong>Paint</strong> creates a solid "shell" offering thicker protection and unlimited
+                                colors, but may peel after 5-7 years.
+                                <br><em>We can help you decide what's best for your property!</em>
+                            </p>
+                        </div>
+                    </div>
+
+                    <aside class="lg:col-span-1 space-y-6 fade-on-scroll">
+                        <div class="bg-slate-900 text-white p-6 rounded-t-2xl text-center">
+                            <h3 class="text-xl font-bold">Service Pricing</h3>
+                            <p class="text-slate-400 text-sm">Transparent Estimates</p>
+                        </div>
+
+                        <div class="bg-white border border-slate-200 rounded-b-2xl shadow-lg p-6 space-y-6">
+
+                            <div class="pb-6 border-b border-slate-100">
+                                <h4 class="font-bold text-slate-800">Front Door</h4>
+                                <div class="flex justify-between items-center mt-2">
+                                    <span class="text-2xl font-bold text-brand-green">From $350</span>
+                                </div>
+                                <p class="text-xs text-slate-500 mt-1">Prep, Prime + 2 Coats.</p>
+                            </div>
+
+                            <div class="pb-6 border-b border-slate-100">
+                                <h4 class="font-bold text-slate-800">Garage Door (Single)</h4>
+                                <div class="flex justify-between items-center mt-2">
+                                    <span class="text-2xl font-bold text-brand-green">From $400</span>
+                                </div>
+                                <p class="text-xs text-slate-500 mt-1">Complete refresh. Spray/Roll.</p>
+                            </div>
+
+                            <div class="pb-6 border-b border-slate-100">
+                                <h4 class="font-bold text-slate-800">Fence Staining</h4>
+                                <div class="flex justify-between items-center mt-2">
+                                    <span class="text-2xl font-bold text-slate-900">Custom Quote</span>
+                                </div>
+                                <p class="text-xs text-slate-500 mt-1">Priced per linear foot.</p>
+                            </div>
+
+                            <div class="text-center text-xs text-slate-400">
+                                <p class="font-bold text-brand-blue mb-2">Price Match Guarantee + 5% Off</p>
+                            </div>
+
+                            <a href="contact.html"
+                                class="block w-full text-center bg-brand-green text-white font-bold py-3 rounded-xl hover:bg-green-700 transition shadow-md">
+                                Get Exterior Quote
+                            </a>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 bg-slate-50">
+            <div class="container mx-auto px-4 max-w-7xl">
+                <div class="text-center mb-12 fade-on-scroll">
+                    <h2 class="text-3xl font-bold text-slate-900">Exterior Transformations</h2>
+                    <p class="text-slate-500 mt-2">Small changes, massive impact.</p>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 fade-on-scroll">
+                    <div class="relative group overflow-hidden rounded-xl h-48 md:h-64">
+                        <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?q=80&w=2070&auto=format&fit=crop"
+                            class="w-full h-full object-cover transition duration-500 group-hover:scale-110"
+                            alt="Bold Front Door">
+                        <div
+                            class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                            <span class="text-white font-bold px-4 text-center">Bold Entrance</span>
+                        </div>
+                    </div>
+                    <div class="relative group overflow-hidden rounded-xl h-48 md:h-64">
+                        <img src="https://images.unsplash.com/photo-1598337890636-6e06b3282470?q=80&w=2070&auto=format&fit=crop"
+                            class="w-full h-full object-cover transition duration-500 group-hover:scale-110"
+                            alt="Modern Garage">
+                        <div
+                            class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                            <span class="text-white font-bold px-4 text-center">Modern Garage</span>
+                        </div>
+                    </div>
+                    <div class="relative group overflow-hidden rounded-xl h-48 md:h-64">
+                        <img src="https://images.unsplash.com/photo-1621503837904-89b5c3789d6e?q=80&w=2070&auto=format&fit=crop"
+                            class="w-full h-full object-cover transition duration-500 group-hover:scale-110"
+                            alt="Stained Fence">
+                        <div
+                            class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                            <span class="text-white font-bold px-4 text-center">Rich Wood Stain</span>
+                        </div>
+                    </div>
+                    <div class="relative group overflow-hidden rounded-xl h-48 md:h-64">
+                        <img src="https://images.unsplash.com/photo-1631679706909-1844bbd07221?q=80&w=1992&auto=format&fit=crop"
+                            class="w-full h-full object-cover transition duration-500 group-hover:scale-110"
+                            alt="Painted Shutters">
+                        <div
+                            class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                            <span class="text-white font-bold px-4 text-center">Crisp Shutters</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-4 max-w-3xl">
+                <h2 class="text-3xl font-bold text-slate-900 text-center mb-10">Common Questions</h2>
+                <div class="faq-accordion space-y-4">
+                    <div
+                        class="faq-item bg-white rounded-lg border border-slate-200 overflow-hidden hover:shadow-md transition">
+                        <button
+                            class="faq-question w-full text-left p-6 font-semibold text-slate-700 flex justify-between items-center transition-colors">
+                            What is the best time of year to paint?
+                            <span class="icon-plus text-brand-green text-2xl transition-transform duration-300">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="p-6 pt-0 text-slate-600 leading-relaxed border-t border-slate-100">
+                                The ideal time is during dry, mild months (late May to early October). Temperatures must
+                                be consistently above 10°C with no rain in the forecast for proper curing.
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="faq-item bg-white rounded-lg border border-slate-200 overflow-hidden hover:shadow-md transition">
+                        <button
+                            class="faq-question w-full text-left p-6 font-semibold text-slate-700 flex justify-between items-center transition-colors">
+                            Should I paint or stain my fence?
+                            <span class="icon-plus text-brand-green text-2xl transition-transform duration-300">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="p-6 pt-0 text-slate-600 leading-relaxed border-t border-slate-100">
+                                It depends on the look you want! Stain protects from within and shows wood grain. Paint
+                                offers a solid color shell and higher protection but can peel over time if moisture gets
+                                in.
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="faq-item bg-white rounded-lg border border-slate-200 overflow-hidden hover:shadow-md transition">
+                        <button
+                            class="faq-question w-full text-left p-6 font-semibold text-slate-700 flex justify-between items-center transition-colors">
+                            How long will the finish last?
+                            <span class="icon-plus text-brand-green text-2xl transition-transform duration-300">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="p-6 pt-0 text-slate-600 leading-relaxed border-t border-slate-100">
+                                With professional preparation and premium paints, you can expect exterior doors and
+                                fences to look great for 5-10 years, depending on sun and rain exposure.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 bg-brand-blue text-center text-white fade-on-scroll">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl md:text-5xl font-bold mb-6">Make a Great First Impression</h2>
+                <p class="text-xl text-blue-100 mb-10">Contact us today for a free estimate on your exterior project.
+                </p>
+                <a href="contact.html"
+                    class="inline-block bg-white text-brand-blue px-10 py-4 rounded-full font-bold text-lg hover:bg-brand-green hover:text-white transition shadow-xl hover:shadow-2xl hover:-translate-y-1">
+                    Request Free Quote
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer bg-slate-900 text-slate-400 border-t-4 border-brand-blue pt-20 text-sm">
+        <div class="container mx-auto px-4 max-w-7xl">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <div class="footer-column">
+                    <a href="index.html" class="block text-2xl font-bold text-white mb-6 uppercase tracking-wider">TD
+                        Painters</a>
+                    <p class="leading-relaxed mb-6">Professional residential and commercial painting services. We bring
+                        color to life with precision, quality, and a 100% satisfaction guarantee.</p>
+                    <div class="social-icons flex gap-4">
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-white hover:bg-brand-blue hover:-translate-y-1 transition border border-slate-700">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-white hover:bg-brand-blue hover:-translate-y-1 transition border border-slate-700">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-white hover:bg-brand-blue hover:-translate-y-1 transition border border-slate-700">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                                </path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4
+                        class="text-white text-lg font-bold mb-6 relative pb-3 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-10 after:h-1 after:bg-brand-green">
+                        Explore</h4>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="hover:text-brand-green hover:pl-1 transition-all">Home</a></li>
+                        <li><a href="about.html" class="hover:text-brand-green hover:pl-1 transition-all">About Us</a>
+                        </li>
+                        <li><a href="services.html"
+                                class="hover:text-brand-green hover:pl-1 transition-all">Services</a></li>
+                        <li><a href="gallery.html" class="hover:text-brand-green hover:pl-1 transition-all">Project
+                                Gallery</a></li>
+                        <li><a href="pricing.html" class="hover:text-brand-green hover:pl-1 transition-all">Pricing &
+                                Offers</a></li>
+                        <li><a href="blog.html" class="hover:text-brand-green hover:pl-1 transition-all">Tips & Blog</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4
+                        class="text-white text-lg font-bold mb-6 relative pb-3 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-10 after:h-1 after:bg-brand-green">
+                        Service Areas</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="hover:text-brand-green hover:pl-1 transition-all">Toronto & Downtown</a>
+                        </li>
+                        <li><a href="#" class="hover:text-brand-green hover:pl-1 transition-all">Mississauga</a></li>
+                        <li><a href="#" class="hover:text-brand-green hover:pl-1 transition-all">Brampton</a></li>
+                        <li><a href="#" class="hover:text-brand-green hover:pl-1 transition-all">Oakville & Milton</a>
+                        </li>
+                        <li><a href="#" class="hover:text-brand-green hover:pl-1 transition-all">Vaughan & Richmond
+                                Hill</a></li>
+                        <li><a href="#" class="hover:text-brand-green hover:pl-1 transition-all">North York &
+                                Scarborough</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column contact-column">
+                    <h4
+                        class="text-white text-lg font-bold mb-6 relative pb-3 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-10 after:h-1 after:bg-brand-green">
+                        Get in Touch</h4>
+                    <div class="flex items-center gap-3 mb-4 text-white font-semibold">
+                        <span>📞</span> <a href="tel:+14167387614" class="hover:text-brand-green">+1 (416) 738-7614</a>
+                    </div>
+                    <div class="flex items-center gap-3 mb-6 text-white font-semibold">
+                        <span>✉️</span> <a href="mailto:info@tdpainters.com"
+                            class="hover:text-brand-green">info@tdpainters.com</a>
+                    </div>
+                    <div class="bg-slate-800 p-4 rounded-lg border-l-4 border-brand-blue">
+                        <h5 class="text-white font-bold mb-2">Business Hours</h5>
+                        <p class="text-slate-400 text-xs">Mon - Fri: 8:00 AM - 7:00 PM</p>
+                        <p class="text-slate-400 text-xs mt-1">Sat: 9:00 AM - 5:00 PM</p>
+                        <p class="text-slate-400 text-xs mt-1">Sun: Closed</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom bg-black/20 border-t border-slate-800 py-6">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
+                    <div class="copyright">&copy; 2026 TD Painters. All Rights Reserved.</div>
+                    <div class="legal-links flex gap-6">
+                        <a href="#" class="hover:text-brand-green transition">Privacy Policy</a>
+                        <a href="#" class="hover:text-brand-green transition">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/assets/js/script.js"></script>
+</body>
+
+</html>
