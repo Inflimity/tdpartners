@@ -88,52 +88,84 @@
 <body class="font-sans text-slate-600 antialiased bg-slate-50">
 
     <header
-        class="main-header fixed w-full top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 transition-all duration-300 py-5">
+        class="main-header fixed w-full top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 transition-all duration-300 py-4">
+
         <div class="container mx-auto px-4 max-w-7xl flex justify-between items-center relative">
-            <a href="index.html" class="logo text-2xl font-bold text-brand-blue uppercase tracking-wide">TD Painters</a>
-            <button
-                class="menu-toggle block lg:hidden text-3xl text-brand-blue focus:outline-none"><span>&#9776;</span></button>
-            <nav class="main-nav">
-                <ul class="lg:flex lg:items-center lg:space-x-8 font-semibold text-slate-700">
-                    <li><a href="index.html" class="block py-2 px-4 hover:text-brand-green transition-colors">Home</a>
+
+            <a href="index.html" class="logo text-2xl font-bold text-brand-blue uppercase tracking-wide shrink-0">
+                TD Painters
+            </a>
+
+            <button id="mobile-menu-btn"
+                class="block lg:hidden text-4xl text-brand-blue focus:outline-none cursor-pointer p-2"
+                aria-label="Toggle navigation">
+                <span>&#9776;</span>
+            </button>
+
+            <nav id="main-nav-menu"
+                class="hidden absolute top-full left-0 w-full bg-white shadow-xl border-t border-slate-100 lg:border-none lg:shadow-none lg:static lg:w-auto lg:bg-transparent lg:flex">
+
+                <ul class="flex flex-col lg:flex-row lg:items-center lg:space-x-8 font-semibold text-slate-700">
+
+                    <li>
+                        <a href="index.html"
+                            class="block py-4 px-6 lg:py-2 lg:px-4 hover:bg-slate-50 lg:hover:bg-transparent hover:text-brand-green transition-colors border-b lg:border-none border-slate-100">Home</a>
                     </li>
-                    <li class="relative group dropdown">
-                        <a href="#services"
-                            class="block py-2 px-4 hover:text-brand-green transition-colors cursor-pointer flex items-center gap-1">Services
-                            <span>▾</span></a>
-                        <ul
-                            class="dropdown-menu hidden group-hover:block lg:absolute lg:top-full lg:left-0 lg:w-64 lg:bg-white lg:shadow-xl lg:rounded-xl lg:py-2 lg:border lg:border-slate-100 z-50">
+
+                    <li class="relative group">
+                        <button id="services-toggle"
+                            class="w-full text-left py-4 px-6 lg:py-2 lg:px-4 hover:bg-slate-50 lg:hover:bg-transparent hover:text-brand-green transition-colors flex items-center justify-between lg:justify-start gap-1 border-b lg:border-none border-slate-100 font-semibold text-slate-700">
+                            Services <span class="text-xs transition-transform duration-200" id="arrow-icon">▼</span>
+                        </button>
+
+                        <ul id="services-dropdown"
+                            class="hidden lg:group-hover:block lg:absolute lg:top-full lg:left-0 lg:w-72 lg:bg-white lg:shadow-xl lg:rounded-xl lg:py-2 lg:border lg:border-slate-100 z-50 bg-slate-50 lg:bg-white">
                             <li><a href="residential-painting.html"
-                                    class="block px-6 py-3 hover:bg-slate-50 hover:text-brand-blue">Residential
+                                    class="block pl-10 pr-6 py-3 lg:px-6 hover:bg-slate-100 lg:hover:bg-slate-50 hover:text-brand-blue transition text-sm lg:text-base">Residential
                                     Painting</a></li>
                             <li><a href="commercial-painting.html"
-                                    class="block px-6 py-3 hover:bg-slate-50 hover:text-brand-blue">Commercial
+                                    class="block pl-10 pr-6 py-3 lg:px-6 hover:bg-slate-100 lg:hover:bg-slate-50 hover:text-brand-blue transition text-sm lg:text-base">Commercial
                                     Painting</a></li>
                             <li><a href="popcorn-ceiling-removal.html"
-                                    class="block px-6 py-3 hover:bg-slate-50 hover:text-brand-blue">Popcorn Ceiling
-                                    Removal</a></li>
+                                    class="block pl-10 pr-6 py-3 lg:px-6 hover:bg-slate-100 lg:hover:bg-slate-50 hover:text-brand-blue transition text-sm lg:text-base">Popcorn
+                                    Ceiling Removal</a></li>
                             <li><a href="kitchen-cabinet-painting.html"
-                                    class="block px-6 py-3 hover:bg-slate-50 hover:text-brand-blue">Kitchen Cabinet
-                                    Painting</a></li>
+                                    class="block pl-10 pr-6 py-3 lg:px-6 hover:bg-slate-100 lg:hover:bg-slate-50 hover:text-brand-blue transition text-sm lg:text-base">Kitchen
+                                    Cabinet Painting</a></li>
                             <li><a href="door-fence-painting.html"
-                                    class="block px-6 py-3 hover:bg-slate-50 hover:text-brand-blue">Door & Fence
-                                    Painting</a></li>
+                                    class="block pl-10 pr-6 py-3 lg:px-6 hover:bg-slate-100 lg:hover:bg-slate-50 hover:text-brand-blue transition text-sm lg:text-base">Door
+                                    & Fence Painting</a></li>
                             <li><a href="bathroom-services.html"
-                                    class="block px-6 py-3 hover:bg-slate-50 hover:text-brand-blue">Bathroom
+                                    class="block pl-10 pr-6 py-3 lg:px-6 hover:bg-slate-100 lg:hover:bg-slate-50 hover:text-brand-blue transition text-sm lg:text-base">Bathroom
                                     Services</a></li>
                         </ul>
                     </li>
-                    <li><a href="pricing.html"
-                            class="block py-2 px-4 hover:text-brand-green transition-colors">Pricing</a></li>
-                    <li><a href="gallery.html"
-                            class="block py-2 px-4 hover:text-brand-green transition-colors">Gallery</a></li>
+
+                    <li>
+                        <a href="pricing.html"
+                            class="block py-4 px-6 lg:py-2 lg:px-4 hover:bg-slate-50 lg:hover:bg-transparent hover:text-brand-green transition-colors border-b lg:border-none border-slate-100">Pricing</a>
+                    </li>
+
+                    <li>
+                        <a href="gallery.html"
+                            class="block py-4 px-6 lg:py-2 lg:px-4 hover:bg-slate-50 lg:hover:bg-transparent hover:text-brand-green transition-colors border-b lg:border-none border-slate-100">Gallery</a>
+                    </li>
+
+                    <li class="lg:hidden p-6">
+                        <a href="contact.html"
+                            class="block text-center bg-brand-green text-white py-3 rounded-full hover:bg-green-700 shadow-lg font-bold">Get
+                            Free Quote</a>
+                    </li>
                 </ul>
             </nav>
+
             <a href="contact.html"
-                class="cta-button hidden lg:inline-block bg-brand-green text-white px-8 py-3 rounded-full font-semibold hover:bg-green-700 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">Free
-                Quote</a>
+                class="cta-button hidden lg:inline-block bg-brand-green text-white px-8 py-3 rounded-full font-semibold hover:bg-green-700 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
+                Free Quote
+            </a>
         </div>
     </header>
+
 
     <main>
         <section class="relative h-[500px] flex items-center justify-center overflow-hidden">
