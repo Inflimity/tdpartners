@@ -197,7 +197,17 @@
                             </p>
                         </div>
 
-                        <form action="mailto:info@tdpainters.com" method="post" enctype="text/plain" class="space-y-6">
+                        <form action="https://api.web3forms.com/submit" method="POST" id="contactForm"
+                            class="space-y-6">
+                            <!-- Web3Forms Access Key -->
+                            <input type="hidden" name="access_key" value="9b863566-3e23-44bc-8879-60b71fefda75">
+
+                            <!-- Hidden input to store Cloudinary Image URLs -->
+                            <input type="hidden" name="image_urls" id="image_urls">
+
+                            <!-- Optional: Redirect to a success page or keeping it here -->
+                            <!-- <input type="hidden" name="redirect" value="https://yourwebsite.com/thanks.html"> -->
+
                             <div class="grid md:grid-cols-2 gap-6">
                                 <div>
                                     <label for="name" class="block text-sm font-semibold text-slate-700 mb-2">Full Name
@@ -248,23 +258,30 @@
                                     Pictures (Optional)</label>
                                 <div
                                     class="relative border-2 border-dashed border-slate-300 rounded-xl p-6 text-center hover:bg-slate-50 transition">
-                                    <input type="file" id="pictures" name="pictures" multiple
+                                    <input type="file" id="pictures" multiple accept="image/*"
                                         class="absolute inset-0 w-full h-full opacity-0 cursor-pointer">
                                     <div class="text-slate-500">
                                         <span class="text-2xl block mb-2">📷</span>
                                         <span class="text-brand-blue font-bold">Click to upload</span> or drag and drop
                                         <p class="text-xs mt-1">Photos help us give accurate estimates</p>
                                     </div>
+                                    <!-- Preview Area -->
+                                    <div id="preview-area" class="mt-4 flex flex-wrap gap-2 justify-center hidden">
+                                    </div>
                                 </div>
                             </div>
 
-                            <button type="submit"
-                                class="w-full bg-brand-green text-white font-bold text-lg py-4 rounded-xl hover:bg-green-700 hover:shadow-lg hover:-translate-y-1 transition duration-300">
-                                Send Quote Request
+                            <button type="submit" id="submit-btn"
+                                class="w-full bg-brand-green text-white font-bold text-lg py-4 rounded-xl hover:bg-green-700 hover:shadow-lg hover:-translate-y-1 transition duration-300 flex items-center justify-center gap-2">
+                                <span>Send Quote Request</span>
+                                <div id="loading-spinner"
+                                    class="hidden w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin">
+                                </div>
                             </button>
                             <p class="text-center text-xs text-slate-400 mt-4">Your information is kept strictly
                                 confidential.</p>
                         </form>
+
                     </div>
 
                     <div class="space-y-8 fade-on-scroll order-1 lg:order-2">
@@ -379,7 +396,7 @@
                     <p class="leading-relaxed mb-6">Professional residential and commercial painting services. We bring
                         color to life with precision, quality, and a 100% satisfaction guarantee.</p>
                     <div class="social-icons flex gap-4">
-                        <a href="#"
+                        <a href="https://web.facebook.com/tdpainters205?_rdc=1&_rdr#"
                             class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-white hover:bg-brand-blue hover:-translate-y-1 transition border border-slate-700">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -472,7 +489,26 @@
         </div>
     </footer>
 
+
     <script src="/assets/js/script.js"></script>
+
+    <div id="success-modal"
+        class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm">
+        <div class="bg-white rounded-3xl p-8 max-w-sm w-full shadow-2xl transform transition-all text-center">
+            <div
+                class="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6 text-4xl">
+                ✓
+            </div>
+            <h3 class="text-2xl font-bold text-slate-900 mb-2">Request Sent!</h3>
+            <p class="text-slate-600 mb-8">We've received your details and will get back to you with a quote shortly.
+            </p>
+            <button id="close-modal"
+                class="w-full bg-brand-blue text-white font-bold py-3 rounded-xl hover:bg-blue-700 transition duration-300">
+                Great, thanks!
+            </button>
+        </div>
+    </div>
+
 </body>
 
 </html>

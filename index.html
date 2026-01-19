@@ -768,47 +768,61 @@
                     class="bg-white p-8 md:p-10 rounded-3xl shadow-2xl border border-slate-100 fade-on-scroll relative">
                     <h3 class="text-2xl font-bold text-slate-900 mb-6">Request a Free Quote</h3>
 
-                    <form action="#" class="space-y-5">
+
+                    <form id="homePricingForm" class="space-y-5">
+                        <input type="hidden" name="access_key" value="9b863566-3e23-44bc-8879-60b71fefda75">
+
+                        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
                         <div class="grid md:grid-cols-2 gap-5">
                             <div>
-                                <label class="block text-sm font-semibold text-slate-700 mb-2">Full Name</label>
-                                <input type="text" placeholder="John Doe"
+                                <label for="hp-name" class="block text-sm font-semibold text-slate-700 mb-2">Full
+                                    Name</label>
+                                <input type="text" id="hp-name" name="name" required placeholder="John Doe"
                                     class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-blue/50 focus:border-brand-blue transition">
                             </div>
                             <div>
-                                <label class="block text-sm font-semibold text-slate-700 mb-2">Phone Number</label>
-                                <input type="tel" placeholder="(416) 000-0000"
+                                <label for="hp-phone" class="block text-sm font-semibold text-slate-700 mb-2">Phone
+                                    Number</label>
+                                <input type="tel" id="hp-phone" name="phone" required placeholder="(416) 000-0000"
                                     class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-blue/50 focus:border-brand-blue transition">
                             </div>
                         </div>
 
                         <div>
-                            <label class="block text-sm font-semibold text-slate-700 mb-2">Email Address</label>
-                            <input type="email" placeholder="john@example.com"
+                            <label for="hp-email" class="block text-sm font-semibold text-slate-700 mb-2">Email
+                                Address</label>
+                            <input type="email" id="hp-email" name="email" required placeholder="john@example.com"
                                 class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-blue/50 focus:border-brand-blue transition">
                         </div>
 
                         <div>
-                            <label class="block text-sm font-semibold text-slate-700 mb-2">Service Needed</label>
-                            <select
+                            <label for="hp-service" class="block text-sm font-semibold text-slate-700 mb-2">Service
+                                Needed</label>
+                            <select id="hp-service" name="service"
                                 class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-blue/50 focus:border-brand-blue transition text-slate-600">
-                                <option>Residential Painting</option>
-                                <option>Commercial Painting</option>
-                                <option>Kitchen Cabinets</option>
-                                <option>Popcorn Removal</option>
-                                <option>Other</option>
+                                <option value="Residential Painting">Residential Painting</option>
+                                <option value="Commercial Painting">Commercial Painting</option>
+                                <option value="Kitchen Cabinets">Kitchen Cabinets</option>
+                                <option value="Popcorn Removal">Popcorn Removal</option>
+                                <option value="Other">Other</option>
                             </select>
                         </div>
 
                         <div>
-                            <label class="block text-sm font-semibold text-slate-700 mb-2">Project Details</label>
-                            <textarea rows="4" placeholder="Tell us about your project..."
+                            <label for="hp-message" class="block text-sm font-semibold text-slate-700 mb-2">Project
+                                Details</label>
+                            <textarea id="hp-message" name="message" rows="4" required
+                                placeholder="Tell us about your project..."
                                 class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-blue/50 focus:border-brand-blue transition"></textarea>
                         </div>
 
-                        <button type="submit"
-                            class="w-full bg-brand-green text-white font-bold text-lg py-4 rounded-xl hover:bg-green-700 hover:shadow-lg hover:-translate-y-1 transition duration-300">
-                            Send Request
+                        <button type="submit" id="hp-submit-btn"
+                            class="w-full bg-brand-green text-white font-bold text-lg py-4 rounded-xl hover:bg-green-700 hover:shadow-lg hover:-translate-y-1 transition duration-300 flex items-center justify-center gap-2">
+                            <span>Send Request</span>
+                            <div id="hp-loading-spinner"
+                                class="hidden w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin">
+                            </div>
                         </button>
 
                         <p class="text-xs text-center text-slate-400 mt-4">We respect your privacy. No spam, ever.</p>
@@ -827,7 +841,7 @@
                     <p class="leading-relaxed mb-6">Professional residential and commercial painting services. We bring
                         color to life with precision, quality, and a 100% satisfaction guarantee.</p>
                     <div class="social-icons flex gap-4">
-                        <a href="#"
+                        <a href="https://web.facebook.com/tdpainters205?_rdc=1&_rdr#"
                             class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-white hover:bg-brand-blue hover:-translate-y-1 transition border border-slate-700">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -928,6 +942,24 @@
     </footer>
 
     <script src="/assets/js/script.js"></script>
+
+
+    <div id="success-modal"
+        class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm">
+        <div class="bg-white rounded-3xl p-8 max-w-sm w-full shadow-2xl transform transition-all text-center">
+            <div
+                class="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6 text-4xl">
+                ✓
+            </div>
+            <h3 class="text-2xl font-bold text-slate-900 mb-2">Request Sent!</h3>
+            <p class="text-slate-600 mb-8">We've received your details and will get back to you shortly.
+            </p>
+            <button id="close-modal"
+                class="w-full bg-brand-blue text-white font-bold py-3 rounded-xl hover:bg-blue-700 transition duration-300">
+                Great, thanks!
+            </button>
+        </div>
+    </div>
 </body>
 
 </html>
