@@ -7,7 +7,7 @@
         !function (f, b, e, v, n, t, s) {
             if (f.fbq) return; n = f.fbq = function () {
                 n.callMethod ?
-                n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
             };
             if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
             n.queue = []; t = b.createElement(e); t.async = !0;
@@ -171,7 +171,11 @@
                     <li class="relative group">
                         <button id="services-toggle"
                             class="w-full text-left py-4 px-6 lg:py-2 lg:px-4 hover:bg-slate-50 lg:hover:bg-transparent hover:text-brand-green transition-colors flex items-center justify-between lg:justify-start gap-1 border-b lg:border-none border-slate-100 font-semibold text-slate-700">
-                            Services <span class="text-xs transition-transform duration-200" id="arrow-icon">▼</span>
+                            Services <svg id="arrow-icon" class="w-3 h-3 transition-transform duration-200" width="12"
+                                height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="m6 9 6 6 6-6" />
+                            </svg>
                         </button>
 
                         <ul id="services-dropdown"
@@ -276,7 +280,26 @@
                 <div
                     class="flex flex-col md:flex-row items-center justify-center gap-4 text-sm font-medium text-slate-300 opacity-90">
                     <div class="flex items-center gap-1 text-yellow-400">
-                        <span>★★★★★</span>
+                        <svg class="w-4 h-4 fill-current" width="16" height="16" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                        </svg>
+                        <svg class="w-4 h-4 fill-current" width="16" height="16" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                        </svg>
+                        <svg class="w-4 h-4 fill-current" width="16" height="16" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                        </svg>
+                        <svg class="w-4 h-4 fill-current" width="16" height="16" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                        </svg>
+                        <svg class="w-4 h-4 fill-current" width="16" height="16" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                        </svg>
                     </div>
                     <span>Trusted by 500+ Families in the GTA</span>
                 </div>
@@ -632,41 +655,109 @@
                         <p class="text-lg text-slate-600 mb-8">TD Painters offers top-quality services across Toronto,
                             Mississauga, Brampton, and surrounding areas.</p>
                         <ul class="grid grid-cols-2 gap-y-3 text-slate-700 font-medium">
-                            <li class="flex items-center gap-2"><span class="text-brand-green font-bold">✓</span>
+                            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-brand-green" width="16"
+                                    height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>
                                 Toronto</li>
-                            <li class="flex items-center gap-2"><span class="text-brand-green font-bold">✓</span>
+                            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-brand-green" width="16"
+                                    height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>
                                 Brampton</li>
-                            <li class="flex items-center gap-2"><span class="text-brand-green font-bold">✓</span>
+                            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-brand-green" width="16"
+                                    height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>
                                 Mississauga</li>
-                            <li class="flex items-center gap-2"><span class="text-brand-green font-bold">✓</span>
+                            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-brand-green" width="16"
+                                    height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>
                                 Oakville</li>
-                            <li class="flex items-center gap-2"><span class="text-brand-green font-bold">✓</span>
+                            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-brand-green" width="16"
+                                    height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>
                                 Vaughan</li>
                             <li class="flex items-center gap-2"><span class="text-brand-green font-bold">✓</span> North
                                 York</li>
-                            <li class="flex items-center gap-2"><span class="text-brand-green font-bold">✓</span>
+                            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-brand-green" width="16"
+                                    height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>
                                 Scarborough</li>
-                            <li class="flex items-center gap-2"><span class="text-brand-green font-bold">✓</span>
+                            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-brand-green" width="16"
+                                    height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>
                                 Etobicoke</li>
-                            <li class="flex items-center gap-2"><span class="text-brand-green font-bold">✓</span>
+                            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-brand-green" width="16"
+                                    height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>
                                 Markham</li>
-                            <li class="flex items-center gap-2"><span class="text-brand-green font-bold">✓</span>
+                            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-brand-green" width="16"
+                                    height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>
                                 York Region</li>
-                            <li class="flex items-center gap-2"><span class="text-brand-green font-bold">✓</span>
+                            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-brand-green" width="16"
+                                    height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>
                                 Pickering</li>
-                            <li class="flex items-center gap-2"><span class="text-brand-green font-bold">✓</span>
+                            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-brand-green" width="16"
+                                    height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>
                                 Caledon</li>
-                            <li class="flex items-center gap-2"><span class="text-brand-green font-bold">✓</span>
+                            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-brand-green" width="16"
+                                    height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>
                                 Kitchener</li>
-                            <li class="flex items-center gap-2"><span class="text-brand-green font-bold">✓</span>
+                            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-brand-green" width="16"
+                                    height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>
                                 Hamilton</li>
-                            <li class="flex items-center gap-2"><span class="text-brand-green font-bold">✓</span>
+                            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-brand-green" width="16"
+                                    height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>
                                 Milton</li>
-                            <li class="flex items-center gap-2"><span class="text-brand-green font-bold">✓</span>
+                            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-brand-green" width="16"
+                                    height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>
                                 George Town</li>
-                            <li class="flex items-center gap-2"><span class="text-brand-green font-bold">✓</span>
+                            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-brand-green" width="16"
+                                    height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>
                                 Downtown Toronto</li>
-                            <li class="flex items-center gap-2"><span class="text-brand-green font-bold">✓</span>
+                            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-brand-green" width="16"
+                                    height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>
                                 Richmond Hill</li>
 
 
@@ -746,7 +837,12 @@
                         <div class="flex items-start gap-5 group">
                             <div
                                 class="w-14 h-14 bg-blue-50 text-brand-blue rounded-2xl flex items-center justify-center text-2xl group-hover:bg-brand-blue group-hover:text-white transition duration-300 shadow-sm">
-                                📞
+                                <svg class="w-6 h-6" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path
+                                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                                </svg>
                             </div>
                             <div>
                                 <h4 class="text-lg font-bold text-slate-900">Phone</h4>
@@ -760,7 +856,12 @@
                         <div class="flex items-start gap-5 group">
                             <div
                                 class="w-14 h-14 bg-green-50 text-brand-green rounded-2xl flex items-center justify-center text-2xl group-hover:bg-brand-green group-hover:text-white transition duration-300 shadow-sm">
-                                ✉️
+                                <svg class="w-6 h-6" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <rect width="20" height="16" x="2" y="4" rx="2" />
+                                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                                </svg>
                             </div>
                             <div>
                                 <h4 class="text-lg font-bold text-slate-900">Email</h4>
@@ -773,7 +874,12 @@
                         <div class="flex items-start gap-5 group">
                             <div
                                 class="w-14 h-14 bg-slate-100 text-slate-600 rounded-2xl flex items-center justify-center text-2xl group-hover:bg-slate-800 group-hover:text-white transition duration-300 shadow-sm">
-                                📍
+                                <svg class="w-6 h-6" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+                                    <circle cx="12" cy="10" r="3" />
+                                </svg>
                             </div>
                             <div>
                                 <h4 class="text-lg font-bold text-slate-900">Service Area</h4>
@@ -930,10 +1036,18 @@
                         class="text-white text-lg font-bold mb-6 relative pb-3 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-10 after:h-1 after:bg-brand-green">
                         Get in Touch</h4>
                     <div class="flex items-center gap-3 mb-4 text-white font-semibold">
-                        <span>📞</span> <a href="tel:+14167387614" class="hover:text-brand-green">+1 (416) 738-7614</a>
+                        <svg class="w-5 h-5 text-brand-green" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                        </svg> <a href="tel:+14167387614" class="hover:text-brand-green">+1 (416) 738-7614</a>
                     </div>
                     <div class="flex items-center gap-3 mb-6 text-white font-semibold">
-                        <span>✉️</span> <a href="mailto:info@tdpainters.com"
+                        <svg class="w-5 h-5 text-brand-green" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect width="20" height="16" x="2" y="4" rx="2" />
+                            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                        </svg> <a href="mailto:info@tdpainters.com"
                             class="hover:text-brand-green">info@tdpainters.com</a>
                     </div>
 
@@ -967,8 +1081,11 @@
         class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm">
         <div class="bg-white rounded-3xl p-8 max-w-sm w-full shadow-2xl transform transition-all text-center">
             <div
-                class="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6 text-4xl">
-                ✓
+                class="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                <svg class="w-10 h-10" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12" />
+                </svg>
             </div>
             <h3 class="text-2xl font-bold text-slate-900 mb-2">Request Sent!</h3>
             <p class="text-slate-600 mb-8">We've received your details and will get back to you shortly.

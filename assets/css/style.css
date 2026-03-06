@@ -438,7 +438,7 @@ img {
 }
 
 .areas-list li::before {
-    content: '✓';
+    content: '\2713';
     color: var(--accent-green);
     position: absolute;
     left: 0;

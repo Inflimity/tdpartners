@@ -282,6 +282,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 });
 
                 if (response.ok) {
+                    fbq('track', 'Lead');
                     contactForm.reset();
                     if (previewArea) { previewArea.innerHTML = ''; previewArea.classList.add('hidden'); }
                     showSuccess();
@@ -318,6 +319,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 });
 
                 if (response.ok) {
+                    fbq('track', 'Lead');
                     hpForm.reset();
                     showSuccess();
                 }
